@@ -1,0 +1,46 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "marked": "^17.0.3",
+    "nuxt": "^4.3.1",
+    "qrcode.vue": "^3.8.0",
+    "recaptcha-v3": "^1.11.3"
+  },
+  "devDependencies": {
+    "@bootstrap-vue-next/nuxt": "^0.43.7",
+    "@iconify-json/bi": "^1.2.7",
+    "@iconify-json/heroicons": "^1.2.3",
+    "@intlify/unplugin-vue-i18n": "^11.0.7",
+    "@nuxt/eslint": "^1.15.2",
+    "@nuxt/icon": "^2.2.1",
+    "@nuxtjs/robots": "^5.7.0",
+    "@nuxtjs/sitemap": "^7.6.0",
+    "@octokit/core": "^7.0.6",
+    "@types/adm-zip": "^0.5.7",
+    "@types/dot-object": "^2.1.6",
+    "@types/node": "^25.3.0",
+    "adm-zip": "^0.5.16",
+    "bootstrap": "^5.3.8",
+    "bootstrap-vue-next": "^0.43.7",
+    "dot-object": "^2.1.5",
+    "eslint": "^10.0.2",
+    "nuxt-cname-generator": "^2.0.0",
+    "nuxt-link-checker": "^4.3.9",
+    "sass": "^1.97.3",
+    "stylelint": "^17.3.0",
+    "stylelint-config-recommended-vue": "^1.6.1",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "vite-plugin-stylelint": "^6.0.4",
+    "vue-i18n": "^11.2.8"
+  }
+}
