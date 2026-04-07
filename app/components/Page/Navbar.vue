@@ -52,13 +52,16 @@ const items = computed(() => [
 
 <template>
   <b-navbar
-    v-b-color-mode="'light'"
+    class="navbar"
+    v-b-color-mode="'dark'"
     toggleable="lg"
     :variant="null"
+    sticky="top"
   >
     <b-navbar-toggle target="nav-collapse" />
     <b-collapse
       id="nav-collapse"
+      class="position-relative"
       is-nav
     >
       <b-navbar-nav class="ms-auto me-auto">
@@ -68,7 +71,6 @@ const items = computed(() => [
           :to="item.to"
           :class="{ 'fw-bold': item.active }"
         >
-          <icon :name="item.active ? item.icon.active : item.icon.normal" />
           {{ $t(item.title) }}
         </b-nav-item>
       </b-navbar-nav>
@@ -76,8 +78,9 @@ const items = computed(() => [
         <b-button
           to="/#download"
           variant="primary"
+          size="sm"
         >
-          <icon name="heroicons:arrow-down-tray" /> {{ $t('navbar.downloadButton') }}
+          <icon name="heroicons:arrow-down-tray" /> <span class="d-inline d-lg-none d-xl-inline">{{ $t('navbar.downloadButton') }}</span>
         </b-button>
       </b-navbar-nav>
     </b-collapse>
@@ -87,12 +90,22 @@ const items = computed(() => [
 <style lang="scss" scoped>
 @import 'assets/bootstrap-mixins';
 
-.download {
-  position: absolute;
-  right: var(--bs-navbar-padding-y);
+.navbar {
+  background-color: rgb(10, 15, 13, 70%);
+  backdrop-filter: blur(20px);
+
+  .download {
+    position: absolute;
+    right: 0;
+
+    @include media-breakpoint-down(lg) {
+      position: relative;
+    }
+  }
 
   @include media-breakpoint-down(lg) {
-    position: relative;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 </style>

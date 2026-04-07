@@ -4,7 +4,7 @@ import * as path from 'path'
 import StylelintPlugin from 'vite-plugin-stylelint'
 import VueI18nVitePlugin from '@intlify/unplugin-vue-i18n/vite'
 
-import { siteMeta } from './app/site.ts'
+import { siteMeta } from './app/site'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@bootstrap-vue-next/nuxt',
+    '@nuxtjs/google-fonts',
   ],
   devtools: { enabled: true },
 
@@ -73,7 +74,6 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          api: 'modern-compiler',
           silenceDeprecations: ['if-function', 'color-functions', 'global-builtin', 'import'],
         },
       },
@@ -87,6 +87,17 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       stylistic: true,
+    },
+  },
+
+  googleFonts: {
+    families: {
+      'DM+Serif+Display': {
+        bold: true,
+        ital: true,
+      },
+      'DM+Mono': [400, 500],
+      'Outfit': [300, 400, 500, 600],
     },
   },
 

@@ -12,7 +12,24 @@ onMounted(() => {
   setTimeout(() => progress.value = props.language.progress, 500)
 })
 
-const flagCode = computed<string>(() => props.language.code === 'en' ? 'gb' : props.language.code)
+const flagEmoji = computed<string>(() => {
+  switch (props.language.code) {
+    case 'en':
+      return '🇬🇧'
+    case 'fr':
+      return '🇫🇷'
+    case 'de':
+      return '🇩🇪'
+    case 'it':
+      return '🇮🇹'
+    case 'pt':
+      return '🇵🇹'
+    case 'es':
+      return '🇪🇸'
+    default:
+      return '?'
+  }
+})
 
 const variant = computed<keyof BaseColorVariant>(() => {
   if (props.language.progress >= 0.75) {
@@ -28,64 +45,83 @@ const animate = ref<boolean>(false)
 
 <template>
   <nuxt-link
-    class="d-block"
+    class="locale-link"
     :to="`/translate/${language.code}/`"
     @mouseover="animate = true"
     @mouseleave="animate = false"
   >
-    <b-card class="language-card">
-      <img
-        class="flag"
-        :src="`https://flagcdn.com/${flagCode}.svg`"
-        :alt="language.name"
-      >
-      <b-card-text>
-        {{ language.name }}
-      </b-card-text>
-      <div class="d-flex align-items-center">
-        <b-progress
-          class="progress"
-          :max="1"
-          striped
-          :animated="animate"
-          :value="progress"
-          :variant="variant"
-        />
-        <span class="label ps-2">
-          {{ Math.round(language.progress * 100) }}%
+    <div class="d-flex align-items-center mb-2">
+      <span class="flag p-1">
+        {{ flagEmoji }}
+      </span>
+      <div class="flex-fill">
+        <span class="d-block">
+          {{ language.name }}
+        </span>
+        <span class="code">
+          {{ language.code }}
         </span>
       </div>
-    </b-card>
+      <pill>
+        {{ Math.round(language.progress * 100) }}%
+      </pill>
+    </div>
+    <b-progress
+      class="progress"
+      :max="1"
+      striped
+      :animated="animate"
+      :value="progress"
+      :variant="variant"
+    />
   </nuxt-link>
 </template>
 
 <style lang="scss" scoped>
+@import 'assets/bootstrap-mixins';
 @import 'assets/colors';
 
-a {
+.locale-link {
+  display: block;
   text-decoration: none;
+  background-color: var(--bs-tertiary-bg);
+  padding: 1.5rem 2rem;
+  transition: background-color 0.2s;
+  color: var(--bs-body-color);
 
-  .language-card {
-    text-align: center;
+  @include border;
+  @include rounded;
 
-    .flag {
-      height: 50px;
-      margin-bottom: 10px;
-    }
+  .flag {
+    $size: 20px;
 
-    .progress {
-      width: 100%;
+    display: inline-block;
+    font-size: $size;
+    margin-right: 0.5em;
+    height: fit-content;
 
-      :deep(.progress-bar) {
-        transition-duration: 800ms;
-        transition-property: width;
-        transition-timing-function: ease-in-out;
-      }
+    @include rounded;
+    @include border;
+  }
+
+  .code {
+    font-family: var(--bs-font-monospace), monospace;
+    color: var(--bs-secondary-color);
+    font-size: 0.8em;
+  }
+
+  .progress {
+    width: 100%;
+
+    :deep(.progress-bar) {
+      transition-duration: 800ms;
+      transition-property: width;
+      transition-timing-function: ease-in-out;
     }
   }
 
-  &:hover .language-card {
-    background-color: $light;
+  &:hover {
+    background-color: $green-glow;
   }
 }
 </style>

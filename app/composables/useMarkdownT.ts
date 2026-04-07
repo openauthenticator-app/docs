@@ -6,10 +6,10 @@ import { marked } from 'marked'
  */
 export default function useMarkdownT() {
   const { t } = useI18n()
-  return (key: string, parameters?: any) => {
+  return (key: string, parameters?: Record<string, unknown>) => {
     if (parameters?.block) {
       return marked.parse(t(key, parameters), { async: false })
     }
-    return marked.parseInline(t(key, parameters), { async: false })
+    return marked.parseInline(t(key, parameters ?? {}), { async: false })
   }
 }

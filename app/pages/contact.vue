@@ -15,10 +15,11 @@ const { t, locale } = useI18n()
 const markdownT = useMarkdownT()
 watch(
   locale,
-  () => usePageHead({ title: t('contact.title') }),
+  () => usePageHead({ title: t('contact.pageTitle') }),
   { immediate: true },
 )
 
+const maxMessageLength = 500
 const moreInfoNeeded = 'moreInfoNeeded'
 const subjects = [moreInfoNeeded, 'commercial', 'other']
 
@@ -46,7 +47,7 @@ const isValid = () => {
   if (subjects.indexOf(currentSubject.value) === -1) {
     return false
   }
-  return currentMessage.value && currentMessage.value.length > 0
+  return currentMessage.value && currentMessage.value.length > 0 && currentMessage.value.length <= maxMessageLength
 }
 
 const onFormSubmit = async () => {
@@ -80,37 +81,47 @@ const onFormSubmit = async () => {
 </script>
 
 <template>
-  <b-container class="pt-5 pb-5">
-    <b-row>
-      <b-col
-        sm="12"
-        md="7"
-        lg="9"
-      >
-        <h1>{{ t('contact.title') }}</h1>
-        <p v-html="markdownT('contact.description')" />
-      </b-col>
-      <b-col
-        sm="12"
-        md="5"
-        lg="3"
-        class="d-flex align-items-center"
-      >
-        <img
-          class="plane-icon"
-          src="/images/contact/plane.svg"
-          alt="Paper plan"
-          title="Image credit : juicy_fish (freepik.com/author/juicy-fish)"
-        >
-      </b-col>
-    </b-row>
+  <container class="pt-lg-5">
+    <title-with-subtitle level="1">
+      <template #before>
+        <span class="fade-up-1">{{ t('contact.title.before') }}</span>
+      </template>
+      <span
+        class="fade-up-2"
+        v-html="markdownT('contact.title.content')"
+      />
+      <template #description>
+        <p
+          class="fade-up-3 mb-5"
+          v-html="markdownT('contact.description')"
+        />
+      </template>
+    </title-with-subtitle>
     <client-only>
       <b-form
+        class="fade-up-4 form"
         :action="contactPostUrl"
-        class="pt-3 pb-3"
         method="post"
         @submit.prevent="onFormSubmit"
       >
+        <b-form-group
+          class="form-group"
+          :label="t('contact.form.subject.label')"
+          label-for="subject"
+        >
+          <div class="d-flex flex-column flex-sm-row align-items-stretch gap-2">
+            <b-button
+              v-for="(subject, index) in subjects"
+              :key="`contact-subject-${index}`"
+              :variant="currentSubject === subject ? 'primary' : 'secondary'"
+              :disabled="!formEnabled"
+              @click="currentSubject = subject"
+            >
+              {{ t(`contact.form.subject.options.${subject}`) }}
+            </b-button>
+          </div>
+        </b-form-group>
+        <hr class="text-primary">
         <b-form-group
           class="form-group"
           :label="t('contact.form.name.label')"
@@ -141,27 +152,6 @@ const onFormSubmit = async () => {
         </b-form-group>
         <b-form-group
           class="form-group"
-          :label="t('contact.form.subject.label')"
-          label-for="subject"
-        >
-          <b-form-select
-            id="subject"
-            v-model="currentSubject"
-            :disabled="!formEnabled"
-            required
-          >
-            <b-form-select-option
-              v-for="(subject, index) in subjects"
-              :key="`contact-subject-${index}`"
-              :value="subject"
-            >
-              {{ t(`contact.form.subject.options.${subject}`) }}
-            </b-form-select-option>
-          </b-form-select>
-        </b-form-group>
-        <b-form-group
-          v-if="currentSubject !== accountDeletion"
-          class="form-group"
           :label="t('contact.form.message.label')"
           label-for="message"
         >
@@ -171,7 +161,11 @@ const onFormSubmit = async () => {
             rows="6"
             :placeholder="t('contact.form.message.placeholder')"
             :disabled="!formEnabled"
+            :maxlength="maxMessageLength"
           />
+          <div class="counter text-end">
+            {{ currentMessage.length }} / {{ maxMessageLength }}
+          </div>
         </b-form-group>
         <b-button
           class="mt-2"
@@ -188,28 +182,34 @@ const onFormSubmit = async () => {
     </client-only>
     <b-alert
       :model-value="currentState === FormState.error"
-      class="mb-5"
+      class="mt-5 mb-5"
       variant="danger"
     >
       {{ t('contact.form.error') }}
     </b-alert>
     <b-alert
       :model-value="currentState === FormState.success"
-      class="mb-5"
+      class="mt-5 mb-5"
       variant="success"
     >
       {{ t('contact.form.success') }}
     </b-alert>
-  </b-container>
+  </container>
 </template>
 
 <style lang="scss" scoped>
-.plane-icon {
-  max-width: 100%;
+@import 'assets/bootstrap-mixins';
+
+.form {
+  background-color: var(--bs-tertiary-bg);
+  padding: 1.5rem 2rem;
+
+  @include border;
+  @include rounded;
 }
 
 .form-group {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
 }
 </style>

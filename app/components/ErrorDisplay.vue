@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+const markdownT = useMarkdownT()
+
 const props = defineProps<{
   error: any
-  changeTitle?: boolean
 }>()
 
 const errorCode = computed(() => {
@@ -15,43 +19,35 @@ const errorCode = computed(() => {
   }
   return null
 })
-
-const title = computed(() => {
-  if (errorCode.value === 404) {
-    return 'Page not found !'
-  }
-  if (errorCode.value) {
-    return `Error ${errorCode.value}`
-  }
-  return 'Error'
-})
-
-const goBack = () => window.history.back()
 </script>
 
 <template>
   <div>
-    <h1
-      class="text-center"
-      v-text="title"
+    <title-with-subtitle>
+      <template #before>
+        <span class="fade-up-1">{{ t('error.title.before') }}</span>
+      </template>
+      <span
+        v-if="errorCode === 404"
+        class="fade-up-2"
+      >
+        {{ t('error.title.notFound') }}
+      </span>
+      <span
+        v-else
+        class="fade-up-2"
+      >
+        {{ t('error.title.content') }} <em v-if="errorCode">{{ errorCode }}</em>
+      </span>
+      <template #description>
+        <p v-html="markdownT('error.description')" />
+      </template>
+    </title-with-subtitle>
+    <p
+      v-if="errorCode === 404"
+      class="text-muted"
+      v-html="markdownT('error.notFound')"
     />
-    <p>
-      You can keep browsing by heading to the <a
-        class="underline"
-        href="#"
-        @click.prevent="goBack"
-      >previous page</a> or
-      or by going on the <nuxt-link
-        class="underline"
-        to="/"
-      >home page</nuxt-link>.
-    </p>
-    <p v-if="errorCode === 404">
-      If you think something should be here, please <nuxt-link
-        class="underline"
-        to="/contact/"
-      >contact me</nuxt-link>.
-    </p>
     <details v-else>
       <pre>{{ error }}</pre>
     </details>

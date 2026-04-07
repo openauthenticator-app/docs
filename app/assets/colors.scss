@@ -3,12 +3,17 @@ $light: darken(#f8f9fa, 2%);
 $red: #f44336;
 $yellow: #ffeb3b;
 $teal: #009688;
-$green: #4caf50;
-$dark: #212529;
-$primary: #4caf50;
-
-$accordion-button-active-bg: $light;
-$accordion-button-active-color: $dark;
-
-$tooltip-color: black;
-$tooltip-bg: $light;
+$green: #00E87A;
+$dark: #0A0F0D;
+$secondary: #0f1610;
+$primary: $green;
+$body-color-dark: #e8f0eb;
+$body-bg-dark: $dark;
+$body-secondary-color: #7a9485;
+$body-tertiary-bg-dark: #141c16;
+$link-color-dark: $primary;
+$green-glow: rgb(0, 232, 122, 15%);
+$border-color-dark: rgb($primary, 0.2);
+$accordion-button-active-color: white;
+$code-color: $green;
+$modal-content-border-color: $border-color-dark;

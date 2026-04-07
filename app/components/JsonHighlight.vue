@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import hljs from 'highlight.js'
-import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/night-owl.css'
 import json from 'highlight.js/lib/languages/json'
 
 const props = withDefaults(defineProps<{
@@ -64,13 +64,15 @@ const copyToClipboard = async () => {
 </template>
 
 <style lang="scss" scoped>
+@import 'assets/bootstrap-mixins';
 @import 'assets/colors';
 
 .code {
-  background-color: $light;
+  background-color: black;
   padding: 0.375rem 0.75rem;
-  border-radius: var(--bs-border-radius);
   position: relative;
+
+  @include rounded;
 
   .copy-icon {
     position: absolute;
@@ -97,7 +99,6 @@ const copyToClipboard = async () => {
   }
 
   pre {
-    white-space: pre-wrap;
     margin-bottom: 0;
   }
 }

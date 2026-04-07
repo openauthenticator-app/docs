@@ -26,46 +26,103 @@
   "index": {
     "main": {
       "title": {
-        "1": "Sécurisez vos comptes",
-        "2": "avec une appli **gratuite**, **open-source** et **faîte avec amour**"
+        "pill": "Maintenant disponible",
+        "content": "Protégez vos comptes.<br>*Vraiment.*"
       },
       "features": {
-        "1": "**Gratuit** & **open-source**.",
-        "2": "**Synchronisez** facilement vos TOTPs (*Time-based One-Time Password*).",
-        "3": "**Protégez** vos données.",
-        "4": "Utilisable sur (presque) **toutes les plateformes**."
+        "1": "Gratuit & open-source.",
+        "2": "Synchronisez facilement vos TOTPs (*Time-based One-Time Password*).",
+        "3": "Protégez vos données.",
+        "4": "Utilisable sur (presque) toutes les plateformes."
       },
-      "downloadButton": "Télécharger",
+      "buttons": {
+        "download": "Télécharger gratuitement",
+        "sourceCode": "Voir le code source"
+      },
       "latestVersion": {
         "text": "Dernière version :",
         "changelog": "Changelog"
       }
     },
-    "download": {
-      "title": "**Télécharger** l'appli",
-      "description": "Open Authenticator a été créé avec Flutter. Ainsi, vous pouvez l'utiliser aussi bien sur **Android**\nque sur **iOS**, ou encore **macOS**, **Windows** et **Linux** !",
-      "storeButtons": {
-        "availableSoonTemplate": "Bientôt disponible pour {os} !",
-        "availableOnTemplate": "Télécharger pour {os}",
-        "morePlatformsButton": "Une autre plateforme ?"
+    "stats": {
+      "1": "Gratuit & open-source",
+      "2": "Publicité ou tracker",
+      "3": "Plateformes supportées",
+      "4": "Licence open-source"
+    },
+    "features": {
+      "title": {
+        "before": "Fonctionnalités",
+        "content": "Tout ce qu'il vous faut.<br>*Rien de plus.*"
+      },
+      "description": "Conçu pour être simple, fiable et respectueux de vos données. Sans compromis sur la sécurité.",
+      "1": {
+        "title": "Format standard",
+        "description": "Compatible avec tous les services supportant la double authentification : Google, GitHub, Discord, et des milliers d'autres."
+      },
+      "2": {
+        "title": "Synchronisation",
+        "description": "Parce qu'il serait dommage de perdre l'accès à vos comptes en changeant de téléphone. Vous pouvez aussi héberger vous-même le backend ([plus d'informations](https://github.com/openauthenticator-app/backend))."
+      },
+      "3": {
+        "title": "Données privées",
+        "description": "Vos données sont chiffrées avant d'être transmises à l'aide d'une clé dérivée d'un mot de passe maître."
+      },
+      "4": {
+        "title": "Multiplateforme",
+        "description": "Un seul projet, toutes les plateformes. Android, iOS, macOS, Windows et Linux — développé avec Flutter."
+      },
+      "5": {
+        "title": "Traductions",
+        "description": "L'applications est multilingue et est traduite par la communauté. Rejoignez les contributeurs et aidez à la rendre accessible à tous."
+      },
+      "6": {
+        "title": "Ultra-léger",
+        "description": "Aucun bloat, aucune permission inutile. L'application fait ce qu'elle dit, et rien d'autre, rapidement."
       }
     },
+    "download": {
+      "title": {
+        "before": "Télécharger",
+        "content": "Disponible partout où vous êtes."
+      },
+      "description": "Créé avec Flutter, Open Authenticator tourne nativement sur toutes les grandes plateformes. Choisissez la vôtre.",
+      "button": "Télécharger"
+    },
     "openSource": {
-      "title": "Open-source",
+      "title": {
+        "before": "Open-source",
+        "content": "Vérifiable par tout le monde."
+      },
       "description": {
-        "1": "Open Authenticator est une application open-source que vous pouvez utiliser de manière complétement gratuite.\nElle est disponible sous licence [GNU GPL v3](https://github.com/Skyost/OpenAuthenticator).\nVous pouvez contribuer au projet en soumettant vos **pull requests** sur Github,\nen **faisant un don** ou tout simplement en lui **attribuant une étoile** sur Github !",
-        "2": "Vous avez aussi la possibilité d'aider à traduire l'application. Pour ce faire, rendez-vous sur la\npage de [traduction](/translate/). Un grand merci à [tous les contributeurs](https://github.com/Skyost/OpenAuthenticator/contributors) !"
+        "1": "Le code source est entièrement public sous licence GNU GPL v3. Vous pouvez l'auditer, le forker, y contribuer, ou simplement lui faire confiance.",
+        "2": "Envie d'aider ? Contribuez via pull requests sur GitHub, proposez de nouvelles traductions, ou faites un don pour soutenir le projet."
       },
       "linkButtons": {
         "github": "Github",
-        "translate": "Traduire l'application",
-        "paypal": "Faire un don"
+        "translate": "Traduire",
+        "donate": "Faire un don"
+      }
+    },
+    "getStarted": {
+      "title": {
+        "before": "Commencer",
+        "content": "Sécurisez vos comptes<br>*dès maintenant.*"
+      },
+      "description": "Gratuit, open-source et facile à utiliser. Pas de publicité, pas de tracker, pas de données collectées. Téléchargez Open Authenticator et reprenez le contrôle de votre sécurité.",
+      "buttons": {
+        "download": "Télécharger gratuitement",
+        "contribute": "Contribuer"
       }
     }
   },
   "faq": {
-    "title": "Foire aux questions",
-    "lastUpdated": "Dernière mise à jour le 27 décembre 2025",
+    "title": {
+      "lastUpdated": "Dernière mise à jour le 6 avril 2026",
+      "content": "Foire aux *questions.*"
+    },
+    "pageTitle": "Foire aux questions",
+    "description": "Tout ce que vous voulez savoir sur Open Authenticator — sécurité, données, et plus.",
     "questions": {
       "1": {
         "question": "Que faire si j'oublie mon mot de passe principal ?",
@@ -73,33 +130,46 @@
       },
       "2": {
         "question": "Où sont stockées mes données ?",
-        "answer": "Si vous n'avez pas activé la synchronisation des données, tout est stocké localement dans une base de données SQLite gérée à l'aide de [Drift](https://drift.simonbinder.eu/). Même dans ce cas, tout est chiffré. Si vous avez activé la synchronisation des données, nous utilisons Firestore pour les stocker. Si l'application devient populaire, nous prévoyons de créer notre propre backend."
+        "answer": "Si vous n'avez pas activé la synchronisation des données, tout est stocké localement dans une base de données SQLite gérée à l'aide de [Drift](https://drift.simonbinder.eu/). Même dans ce cas, tout est chiffré.\n\nSi vous avez activé la synchronisation des données, tout est stocké de manière brute sur notre backend, dont le code source est disponible [ici](https://github.com/openauthenticator-app/backend)."
       },
       "3": {
         "question": "Qu'est-ce que l'Abonnement Contributeur ?",
-        "answer": "Comme vous le savez peut-être, les serveurs ne sont pas gratuits. Dans notre cas, comme nous nous appuyons sur Firebase, plus nous avons d'utilisateurs, plus nous devons payer. Donc, soit nous :\n\n1. mettons des publicités dans notre application ;\n2. comptons exclusivement sur les dons ;\n3. demandons à nos utilisateurs de payer un peu d'argent.\n\nL'option 2. n'est pas réaliste du tout. L'option 1. pourrait être une solution, mais les publicités entraînent généralement une mauvaise expérience utilisateur. Par conséquent, le choix que nous avons fait pour amortir les coûts est de créer un modèle d'abonnement appelé \"Abonnement Contributeur\". Actuellement, vous pouvez stocker et synchroniser jusqu'à six TOTPs gratuitement, sur tous vos appareils. En vous abonnant à l'Abonnement Contributeur, vous pourrez synchroniser autant de TOTPs que vous le souhaitez.\n\nÀ l'avenir, nous espérons pouvoir lever ces limitations, voire les supprimer ! Dans tous les cas, vous pouvez utiliser l'application en local sans aucune limitation ni publicité."
+        "answer": "Comme vous le savez peut-être, les serveurs ne sont pas gratuits. Dans notre cas, plus nous avons d'utilisateurs, plus les coûts augmentent. Donc, voici les choix à notre disposition.\n\n1. Nous mettons des publicités dans notre application.\n2. Nous comptons exclusivement sur les dons.\n3. Nous demandons à nos utilisateurs de contribuer aux frais de fonctionnement.\n\nL'option 2. n'est pas réaliste du tout. L'option 1. pourrait être une solution, mais les publicités entraînent généralement une mauvaise expérience utilisateur et amènent des trackers. Par conséquent, le choix que nous avons fait pour amortir les coûts est de créer un modèle d'abonnement appelé *Abonnement Contributeur*. Actuellement, vous pouvez stocker et synchroniser jusqu'à six TOTPs gratuitement, sur tous vos appareils. En vous abonnant à l'Abonnement Contributeur, vous pourrez synchroniser autant de TOTPs que vous le souhaitez.\n\nÀ l'avenir, nous espérons pouvoir lever ces limitations, voire les supprimer ! Dans tous les cas, vous pouvez utiliser l'application en local sans aucune limitation ni publicité."
       },
       "4": {
         "question": "Est-ce que je dois télécharger ceci même si mon gestionnaire de mot de passe prend en charge les TOTPs ?",
-        "answer": "Oui, vous devriez. Si votre gestionnaire de mot de passe venait à être compromis, alors vos mots de passe et vos TOTPs seront eux-aussi exposés. Par conséquent, le second facteur d'authentification ne fonctionnera pas comme il le devrait.\n\n*Ne mettez pas tous vos œufs dans le même panier !*"
+        "answer": "Oui, vous devriez. Si votre gestionnaire de mot de passe venait à être compromis, alors vos mots de passe *et* vos TOTPs seraient exposés simultanément. Par conséquent, le second facteur d'authentification ne remplirait plus son rôle.\n\n*Ne mettez pas tous vos œufs dans le même panier !*"
       },
       "5": {
-        "question": "Pourquoi la synchronisation ne peut-elle pas être activée sur Linux ?",
-        "answer": "Elle ne peut pas être activée car ni Firebase Auth, ni Firebase Firestore ne sont [disponibles sur Linux](https://github.com/Skyost/OpenAuthenticator/blob/main/linux/README.md) pour le moment. Votre option actuelle est de simplement importer tous vos TOTPs sur Linux. Vous pouvez également utiliser le système de sauvegardes de l'application pour le faire."
-      },
-      "6": {
         "question": "Je ne peux pas activer l’authentification locale sur Linux. Que faire ?",
         "answer": "Si vous êtes dans ce cas, cela signifie probablement qu’Open Authenticator a été installé via Flatpak.\n\nL’authentification locale sous Linux repose sur un fichier de politique Polkit qui doit être présent sur votre système hôte dans `/usr/share/polkit-1/actions`.\n\nS’il n’est pas présent, vous pouvez l’installer en copiant [ce fichier](https://flatpak.openauthenticator.app/app.openauthenticator.policy) dans `/usr/share/polkit-1/actions`. Redémarrez ensuite Open Authenticator (ou votre session)."
+      },
+      "6": {
+        "question": "Est-il possible d'héberger soi-même le backend ?",
+        "answer": "Oui. Depuis la v2.0.0 de l'application, il vous est possible d'héberger le backend sur votre serveur. Les instructions sont disponibles sur la [page Github du backend](https://github.com/openauthenticator-app/backend) (en anglais)."
       }
     },
+    "categories": {
+      "all": "Toutes les catégories",
+      "security":  "Sécurité",
+      "privacy": "Données",
+      "subscription":  "Abonnement",
+      "platforms": "Plateformes"
+    },
     "questionLeft": {
-      "text": "Il vous reste une question ?",
-      "askButton": "Posez-la !"
+      "title": {
+        "before": "Vous avez encore une question ?",
+        "content": "On est là pour vous aider."
+      },
+      "description": "Une question non couverte dans cette FAQ ? Contactez-nous directement et nous vous répondrons dès que possible.",
+      "askButton": "Posez votre question"
     }
   },
   "privacyPolicy": {
-    "title": "Politique de confidentialité",
-    "lastUpdated": "Dernière mise à jour le 01 avril 2024",
+    "title": {
+      "lastUpdated": "Dernière mise à jour le 6 avril 2026",
+      "content": "Politique de confidentialité."
+    },
     "intro": "Cette politique de confidentialité s'applique à l'application Open Authenticator\n(ci-après dénommée \"Application\") pour appareils mobiles, développée par Skyost\n(ci-après dénommée \"Fournisseur de services\") en tant que service pris en charge par abonnement.\nCe service est fourni \"TEL QUEL\".",
     "userProvidedInfo": {
       "title": "Informations fournies par l'utilisateur",
@@ -115,14 +185,13 @@
     },
     "thirdPartyAccess": {
       "title": "Les tiers voient-ils et/ou ont-ils accès aux informations obtenues par l'Application ?",
-      "content": "Seules les données agrégées et anonymisées sont périodiquement transmises à des services\nexternes pour aider le Fournisseur de services à améliorer l'Application et leur service.\nLe Fournisseur de services peut partager vos informations avec des tiers de la manière décrite dans cette\ndéclaration de confidentialité."
+      "content": "Seules les données agrégées et anonymisées sont périodiquement transmises à des services\ninternes pour aider le Fournisseur de services à améliorer l'Application et leur service.\nLe Fournisseur de services peut partager vos informations avec des tiers de la manière décrite dans cette\ndéclaration de confidentialité."
     },
     "thirdPartyProviders": {
       "title": "Fournisseurs tiers",
       "content": "Veuillez noter que l'Application utilise des services tiers qui ont leur propre politique de confidentialité concernant la gestion des données. Vous trouverez ci-dessous les liens vers la politique de confidentialité des fournisseurs de services tiers utilisés par l'Application :",
       "list": {
         "googlePlayServices": "[Services Google Play](https://www.google.com/policies/privacy/)",
-        "firebase": "[Firebase (y compris, mais sans s'y limiter, Crashlytics, Cloud Firestore, ...)](https://firebase.google.com/support/privacy/)",
         "revenueCat": "[RevenueCat](https://www.revenuecat.com/privacy)"
       }
     },
@@ -149,12 +218,12 @@
     },
     "security": {
       "title": "Sécurité",
-      "content": "Le Fournisseur de services est soucieux de protéger la confidentialité de vos informations.\nLe Fournisseur de services fournit des garanties physiques, électroniques et procédurales pour protéger\nles informations que nous traitons et conservons. Par exemple, si vous choisissez de synchroniser vos\ndonnées entre vos appareils, nous utilisons Firebase Cloud Firestore pour stocker vos TOTP.\nLeur [secret et métadonnées](https://en.wikipedia.org/wiki/Time-based_one-time_password#Security)\nsont cryptés à l'aide d'un algorithme [AES-GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode)\navec une clé dérivée [Argon2](https://en.wikipedia.org/wiki/Argon2) basée sur votre mot de\npasse maître et un sel aléatoire."
+      "content": "Le Fournisseur de services est soucieux de protéger la confidentialité de vos informations.\nLe Fournisseur de services fournit des garanties physiques, électroniques et procédurales pour protéger\nles informations que nous traitons et conservons. Par exemple, si vous choisissez de synchroniser vos\ndonnées entre vos appareils, nous utilisons Cloudflare D1 pour stocker vos TOTP.\nLeur [secret et métadonnées](https://en.wikipedia.org/wiki/Time-based_one-time_password#Security)\nsont cryptés à l'aide d'un algorithme [AES-GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode)\navec une clé dérivée [Argon2](https://en.wikipedia.org/wiki/Argon2) basée sur votre mot de\npasse maître et un sel aléatoire."
     },
     "changes": {
       "title": "Changements",
       "content": "Cette politique de confidentialité peut être mise à jour de temps à autre pour quelque raison que ce soit. Le Fournisseur de services vous informera de tout changement apporté à la politique de confidentialité en mettant à jour cette page avec la nouvelle politique de confidentialité.",
-      "effectiveDate": "Cette politique de confidentialité est en vigueur à compter du 01 avril 2024."
+      "effectiveDate": "Cette politique de confidentialité est en vigueur à compter du 1 avril 2024."
     },
     "contact": {
       "title": "Contactez-nous",
@@ -163,8 +232,10 @@
     "credit": "Merci à [nisrulz](https://app-privacy-policy-generator.firebaseapp.com/) pour cette politique de confidentialité."
   },
   "termsOfService": {
-    "title": "Conditions générales d'utilisation",
-    "lastUpdated": "Dernière mise à jour le 01 avril 2024",
+    "title": {
+      "lastUpdated": "Dernière mise à jour le 6 avril 2026",
+      "content": "Conditions générales d'utilisation."
+    },
     "intro": "Ces conditions générales s'appliquent à l'application Open Authenticator (ci-après dénommée \"Application\")\npour appareils mobiles créée par Skyost (ci-après dénommée \"Fournisseur de services\") en tant que\nservice pris en charge par un abonnement.",
     "agreement": "En téléchargeant ou en utilisant l'Application, vous acceptez automatiquement les conditions suivantes\net la [Politique de confidentialité](/privacy-policy).\nIl est fortement recommandé de lire et de comprendre ces conditions avant d'utiliser l'Application.\nLa copie non autorisée, la modification de l'Application, de toute partie de l'Application ou de nos marques commerciales\nest strictement interdite.\nToute tentative de créer des versions dérivées ou des \"copies\" n'est pas autorisée.\nToutes les marques commerciales, droits d'auteur, droits de base de données et autres droits de propriété intellectuelle\nliés à l'Application restent la propriété du Fournisseur de services.",
     "modification": "Le Fournisseur de services est déterminé à garantir que l'Application soit aussi bénéfique et efficace que possible.\nÀ ce titre, il se réserve le droit de modifier l'Application ou de facturer ses services à tout moment et pour quelque raison que ce soit.\nLe Fournisseur de services vous assure que toute facturation pour l'Application ou ses services vous sera clairement communiquée.",
@@ -172,7 +243,6 @@
     "thirdPartyTerms": "Veuillez noter que l'Application utilise des services tiers qui ont leurs propres conditions générales.\nCi-dessous sont les liens vers les conditions générales des fournisseurs de services tiers utilisés par l'Application :",
     "thirdPartyTermsList": {
       "googlePlayServices": "[Services Google Play](https://www.google.com/policies/privacy/)",
-      "firebase": "[Firebase (y compris, mais sans s'y limiter, Crashlytics, Cloud Firestore, ...)](https://firebase.google.com/support/privacy/)",
       "revenueCat": "[RevenueCat](https://www.revenuecat.com/privacy)"
     },
     "responsibility": "Veuillez noter que le Fournisseur de services ne assume pas la responsabilité pour certains aspects.\nCertaines fonctions de l'Application nécessitent une connexion Internet active, qui peut être Wi-Fi ou fournie\npar votre fournisseur de réseau mobile. Le Fournisseur de services ne peut être tenu responsable si l'Application\nne fonctionne pas à pleine capacité en raison du manque d'accès au Wi-Fi ou si vous avez épuisé votre allocation de données.",
@@ -210,8 +280,12 @@
     "credit": "Merci à [nisrulz](https://app-privacy-policy-generator.firebaseapp.com/) pour ces conditions générales d'utilisation."
   },
   "contact": {
-    "title": "Contact",
-    "description": "Si vous souhaitez me contacter à propos du développement d'Open Authenticator ou un autre sujet en rapport\n(par exemple, pour rapporter un bug), veuillez ouvrir une issue sur [Github](https://github.com/Skyost/OpenAuthenticator).\nSi vous souhaitez me contacter pour n'importe quelle autre raison ou pour supprimer votre compte, vous pouvez utiliser le formulaire de contact\nci-dessous.",
+    "title": {
+      "before": "Contactez-nous",
+      "content": "Entrons en *contact.*"
+    },
+    "pageTitle": "Contact",
+    "description": "Pour tout ce qui concerne le développement d'Open Authenticator — bugs, suggestions, contributions — ouvrez directement une [issue sur GitHub](https://github.com/openauthenticator-app/openauthenticator). Pour toute autre demande (suppression de compte, question générale, …), utilisez le formulaire ci-dessous.",
     "form": {
       "name": {
         "label": "Votre nom",
@@ -225,7 +299,7 @@
         "label": "Sujet de votre message",
         "options": {
           "accountDeletion": "Suppression de mon compte",
-          "moreInfoNeeded": "Demande d'informations complémentaires",
+          "moreInfoNeeded": "Demande d'info",
           "commercial": "Commercial",
           "other": "Autre"
         }
@@ -241,11 +315,20 @@
   },
   "translate": {
     "pageTitle": "Traduction",
-    "title": "Aider à traduire Open Authenticator",
+    "title": {
+      "before": "Contribuer",
+      "content": "Traduire *Open Authenticator.*"
+    },
+    "goBack": "Retour aux langues",
     "notYourLanguage": "Pas votre langue ?",
-    "description": "Vous parlez une autre langue ? Vous souhaitez contribuer à un projet open-source ? N'en dites pas plus,\nOpen Authenticator cherche des traducteurs !",
-    "pickLanguage": "D'abord, choisissez votre langue. Si jamais elle n'est pas disponible, n'hésitez pas à nous envoyer un [petit message](/contact/).",
-    "languageDescription": "La traduction s'organise en plusieurs fichiers. Pour en traduire un, il faut d'abord le dérouler.\nUne fois fait, vous verrez s'afficher les textes originaux dans la colonne de gauche, et la traduction existante dans la colonne\nde droite. Lorsque vous aurez terminé la traduction d'un fichier, vous pouvez l'envoyer en cliquant sur le bouton de soumission vert.\n\nIl est possible de sauvegarder votre progression à tout moment en utilisant le bouton \"Sauvegarder\".\nLe bouton \"Charger\" permettra alors de reprendre la traduction.",
+    "description": "Vous parlez une autre langue ? Contribuez à rendre l'application accessible à tous. Choisissez une langue ci-dessous pour commencer. Si la vôtre n'est pas disponible, [envoyez-nous un message](/contact/) et nous l'ajouterons.",
+    "stats": {
+      "1": "Langues disponibles",
+      "2": "Fichiers",
+      "3": "Traductions complètes",
+      "4": "En progression"
+    },
+    "languageDescription": "La traduction s'organise en plusieurs fichiers. Pour en traduire un, il faut d'abord le dérouler.\nUne fois fait, vous verrez s'afficher les textes originaux dans la colonne de gauche, et la traduction existante dans la colonne\nde droite. Lorsque vous aurez terminé la traduction d'un fichier, vous pouvez l'envoyer en cliquant sur le bouton de soumission vert.\n\nIl est possible de sauvegarder votre progression à tout moment en utilisant le bouton *Sauvegarder*.\nLe bouton *Charger* permettra alors de reprendre la traduction.",
     "accordion": {
       "load": "Charger",
       "save": "Sauvegarder",
@@ -257,7 +340,7 @@
     },
     "modal": {
       "modalTitle": "Envoyer votre traduction",
-      "title": "Merci beaucoup de contribuer à Open Authenticator !",
+      "title": "Merci de *contribuer* à Open Authenticator !",
       "subtitle": "Suivez les étapes ci-dessous pour envoyer votre traduction.",
       "grabCode": {
         "title": "Copier le code",
@@ -293,5 +376,14 @@
     },
     "unsavedChanges": "Il semble que vous avez des changements non enregistrés. Ils seront perdus si vous quittez cette page. Voulez-vous continuer ?",
     "error": "Une erreur est survenue durant l'obtention des données de traduction."
+  },
+  "error": {
+    "title": {
+      "before": "Une erreur est survenue",
+      "content": "Erreur",
+      "notFound": "Page introuvable"
+    },
+    "description": "Vous pouvez poursuivre votre navigation en retournant sur la page précédente ou en allant sur la [page d'accueil](/).",
+    "notFound": "Si quelque-chose devrait se trouver ici, veuillez [envoyer un message](/contact)."
   }
 }

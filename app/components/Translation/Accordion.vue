@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import dot from 'dot-object'
-import {
-  generateJson,
-  fromJson,
-  checkComplete,
-  type TranslationFile,
-  type TranslationData,
-} from '~/components/Translation/Table.vue'
+import { checkComplete, fromJson, generateJson, type TranslationData, type TranslationFile, } from '~/components/Translation/Table.vue'
 import type { LanguageWithData } from '~~/modules/get-info-from-github'
 
 interface RawTranslationFile {
@@ -35,7 +29,10 @@ const fetchTranslationFiles = async (language: string): Promise<Record<string, R
     return result
   }
   if (!(language in languagesData.value)) {
-    throw new Error('Language does not exist yet.')
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Language does not exist yet.',
+    })
   }
   const files = languagesData.value[language]?.files ?? []
   for (const fileName of files) {

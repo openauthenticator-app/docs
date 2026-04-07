@@ -29,39 +29,49 @@ const modalCode = computed<string>(() => props.file ? generateJson(props.file.da
     ok-variant="secondary"
     ok-only
   >
-    <div class="text-center mt-3 mb-3">
-      <h1>{{ $t('translate.modal.title') }}</h1>
-      <p>{{ $t('translate.modal.subtitle') }}</p>
-    </div>
+    <title-with-subtitle>
+      <span v-html="markdownT('translate.modal.title')" />
+      <template #description>
+        <p>
+          {{ $t('translate.modal.subtitle') }}
+        </p>
+      </template>
+    </title-with-subtitle>
     <h2>{{ $t('translate.modal.grabCode.title') }}</h2>
-    <p>{{ $t('translate.modal.grabCode.copyCode') }}</p>
+    <p class="text-muted">
+      {{ $t('translate.modal.grabCode.copyCode') }}
+    </p>
     <json-highlight
       class="mb-3"
       :content="modalCode"
       :copy-text="$t('translate.modal.grabCode.copyToClipboard')"
     />
-    <p>{{ $t('translate.modal.grabCode.translationData') }}</p>
+    <p class="text-muted">
+      {{ $t('translate.modal.grabCode.translationData') }}
+    </p>
     <h2>{{ $t('translate.modal.openGithub.title') }}</h2>
-    <p>{{ $t('translate.modal.openGithub.click') }}</p>
+    <p class="text-muted">
+      {{ $t('translate.modal.openGithub.click') }}
+    </p>
     <b-alert
       :model-value="true"
       variant="light"
-      class="bg-light d-flex align-items-center"
+      body-class="d-flex align-items-center"
     >
       <icon
         name="bi:github"
         class="me-2"
       />
       <a
-        class="alert-link"
+        class="alert-link fw-normal font-monospace text-decoration-none"
         :href="modalFileLink"
         v-text="modalFileLink"
       />
     </b-alert>
     <b-alert
       :model-value="true"
-      variant="danger"
-      class="d-flex align-items-center"
+      variant="primary"
+      body-class="d-flex align-items-center"
     >
       <icon
         name="bi:exclamation-circle-fill"
@@ -73,15 +83,17 @@ const modalCode = computed<string>(() => props.file ? generateJson(props.file.da
       />
     </b-alert>
     <h2>{{ $t('translate.modal.fork.title') }}</h2>
-    <p>
+    <p class="text-muted">
       <span v-html="markdownT('translate.modal.fork.fork')" /> <span v-html="markdownT('translate.modal.fork.pasteTheCode')" /> <span v-html="markdownT('translate.modal.fork.commit')" />
     </p>
     <h2>{{ $t('translate.modal.pullRequest.title') }}</h2>
-    <p v-html="markdownT('translate.modal.pullRequest.beforeCreate')" />
+    <p
+      class="text-muted"
+      v-html="markdownT('translate.modal.pullRequest.beforeCreate')"
+    />
     <b-alert
       :model-value="true"
-      variant="light"
-      class="bg-light"
+      variant="primary"
     >
       <ul class="mb-0">
         <li>
@@ -92,9 +104,12 @@ const modalCode = computed<string>(() => props.file ? generateJson(props.file.da
         </li>
       </ul>
     </b-alert>
-    <p v-html="markdownT('translate.modal.pullRequest.create')" />
+    <p
+      class="text-muted"
+      v-html="markdownT('translate.modal.pullRequest.create')"
+    />
     <h2>{{ $t('translate.modal.done.title') }}</h2>
-    <p class="mb-0">
+    <p class="text-muted mb-0">
       {{ $t('translate.modal.done.message') }}
     </p>
   </b-modal>
@@ -105,10 +120,15 @@ const modalCode = computed<string>(() => props.file ? generateJson(props.file.da
   counter-reset: step-counter;
 
   h2 {
+    margin-top: 2rem;
     font-size: 1.5rem;
     counter-increment: step-counter;
 
     &::before {
+      display: inline-block;
+      font-family: var(--bs-font-monospace), monospace;
+      margin-right: 0.3em;
+      color: var(--bs-primary);
       font-weight: normal;
       content: '#'counter(step-counter)' ';
     }

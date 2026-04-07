@@ -13,6 +13,7 @@
 
 <style scoped lang="scss">
 @import 'assets/bootstrap-mixins';
+@import 'assets/colors';
 
 $padding: 10px;
 $original-width: 330px;
@@ -24,11 +25,13 @@ $md-width: 200px;
   position: relative;
   margin: 0 auto;
   padding: $padding;
-  box-shadow: 0 0 20px #e2e2e2;
+  box-shadow: 0 0 150px #{rgb($green-glow, 0.25)};
   border-radius: 30px;
-  background-color: #484949;
+  background-color: var(--bs-tertiary-bg);
   width: $original-width;
   height: $original-height;
+
+  @include border;
 
   @include media-breakpoint-down(lg) {
     width: $lg-width;
@@ -44,9 +47,11 @@ $md-width: 200px;
 .screen {
   width: 100%;
   height: 100%;
-  background: #f2f2f2;
   border-radius: 30px;
   overflow-y: hidden;
+  box-sizing: border-box;
+
+  @include border;
 }
 
 .brove {
@@ -55,12 +60,15 @@ $md-width: 200px;
 
   width: $brove-original-width;
   height: $brove-original-height;
-  background: #484949;
+  background-color: var(--bs-tertiary-bg);
   position: absolute;
   top: $padding;
   border-radius: 0 0 20px 20px;
+  border-top: none;
   left: 50%;
   transform: translateX(-50%);
+
+  @include border;
 
   @include media-breakpoint-down(lg) {
     $width: calc($brove-original-width * $lg-width / $original-width);

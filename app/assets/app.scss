@@ -6,6 +6,33 @@
 
 $btn-padding-x: 1.5rem;
 $btn-padding-x-lg: 2rem;
+$font-family-sans-serif: 'Outfit', system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "Liberation Sans", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: 'DM Mono', "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+$headings-font-family: 'DM Serif Display', serif;
+$font-weight-normal: 300;
+$input-padding-y: 0.5rem;
+$input-padding-x: 0.75rem;
+$input-bg: $secondary;
+$input-font-family: $font-family-sans-serif;
+$input-btn-padding-y: 0.8rem;
+$input-btn-padding-x: 2rem;
+$input-btn-font-size: 0.85rem;
+$input-btn-padding-y-sm: 0.5rem;
+$input-btn-padding-x-sm: 1.25rem;
+$input-btn-font-size-sm: 0.8rem;
+$input-btn-font-family: $font-family-monospace;
+$navbar-padding-x: 3rem;
+$navbar-padding-y: 1.25rem;
+$navbar-nav-link-padding-x: 1.25rem;
+$accordion-button-icon-dark: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='#{$body-color-dark}' stroke-linecap='round' stroke-linejoin='round' opacity='0.5'><path d='m2 5 6 6 6-6'/></svg>");
+$accordion-button-active-icon-dark: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='#{$primary}' stroke-linecap='round' stroke-linejoin='round'><path d='m2 5 6 6 6-6'/></svg>");
+$accordion-button-padding-x: 1.5rem;
+$accordion-button-padding-y: 1.35rem;
+$accordion-body-padding-x: 1.5rem;
+$accordion-body-padding-y: 1.35rem;
+$focus-ring-box-shadow: 0 0 35px rgb($green-glow, 20%);
+$progress-height: 0.5em;
+
 // $enable-rounded: false;
 
 // 3. Include remainder of required Bootstrap stylesheets
@@ -35,9 +62,7 @@ $btn-padding-x-lg: 2rem;
 @import 'bootstrap/scss/close';
 @import 'bootstrap/scss/spinners';
 @import 'bootstrap/scss/accordion';
-@import 'bootstrap/scss/card';
 @import 'bootstrap/scss/tables';
-@import 'bootstrap/scss/tooltip';
 @import 'bootstrap/scss/forms';
 @import 'bootstrap/scss/alert';
 @import 'bootstrap/scss/modal';
@@ -54,6 +79,65 @@ body {
   min-height: 100%;
 }
 
+h1, h2, h3, h4 {
+  font-weight: bold;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+
+  em {
+    color: $green;
+  }
+}
+
+h1 {
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
 .vue-icon {
   vertical-align: -0.125em;
+}
+
+.text-muted {
+  color: $body-secondary-color !important;
+}
+
+.btn:not(.btn-link) {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.btn-primary {
+  box-shadow: 0 0 40px rgb($green-glow, 20%);
+
+  &:hover {
+    box-shadow: 0 0 60px rgb($green-glow, 35%);
+  }
+}
+
+.btn-link {
+  text-decoration: none;
+}
+
+a {
+  text-decoration-style: dotted;
+  text-underline-offset: 0.25em;
+  text-decoration-color: $green-glow;
+  transition: text-decoration-color 0.2s;
+
+  &:hover {
+    text-decoration-color: $green;
+  }
 }

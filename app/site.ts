@@ -1,7 +1,7 @@
 export interface StoreInfo {
   id: string
   name: string
-  url: string | null
+  url: string | undefined
 }
 
 export type OS = 'android' | 'darwin' | 'windows' | 'linux'
@@ -46,7 +46,7 @@ export const siteMeta = {
   name: 'Open Authenticator',
   description: 'Secure your online accounts with a free, open-source and lovely-crafted app.',
   url: 'https://openauthenticator.app',
-  github: 'https://github.com/Skyost/OpenAuthenticator',
+  github: 'https://github.com/openauthenticator-app/openauthenticator',
 }
 
 export const contactPostUrl = 'https://script.google.com/macros/s/AKfycbxjmOxUnOADCgyII87ac6vas5Y9671WpHAWLAYFjSn05dLmkXdUMl9q-o6gTwVHfgPsVg/exec'

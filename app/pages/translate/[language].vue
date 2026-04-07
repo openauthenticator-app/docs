@@ -2,13 +2,7 @@
 import dot from 'dot-object'
 import { useI18n } from 'vue-i18n'
 import type { LanguageWithData } from '~~/modules/get-info-from-github'
-import {
-  generateJson,
-  fromJson,
-  checkComplete,
-  type TranslationFile,
-  type TranslationData,
-} from '~/components/Translation/Table.vue'
+import { checkComplete, fromJson, generateJson, type TranslationData, type TranslationFile, } from '~/components/Translation/Table.vue'
 
 interface RawTranslationFile {
   fileName: string
@@ -38,7 +32,10 @@ const fetchTranslationFiles = async (language: string): Promise<Record<string, R
     return result
   }
   if (!(language in languagesData.value)) {
-    throw new Error('Language does not exist yet.')
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Language does not exist yet.',
+    })
   }
   const files = languagesData.value[language]?.files ?? []
   for (const fileName of files) {
@@ -161,39 +158,60 @@ onUnmounted(removeGuard)
 </script>
 
 <template>
-  <b-container class="pt-5 pb-5">
+  <container class="pt-lg-5 pb-lg-5">
     <div v-if="filesStatus === 'pending' || languagesStatus === 'pending'">
-      <spinner />
+      <spinner class="fade-up-1" />
     </div>
     <div v-else-if="files">
-      <div class="pb-3">
-        <h1>
-          {{ languagesData![language]!.name }}
-        </h1>
-        <div v-html="markdownT('translate.languageDescription')" />
-        <div class="text-end">
+      <title-with-subtitle level="1">
+        <template #before>
           <nuxt-link
-            class="back-button"
+            class="fade-up-1"
             to="/translate/"
           >
-            {{ t('translate.notYourLanguage') }}
+            {{ t('translate.goBack') }}
           </nuxt-link>
+        </template>
+        <span class="fade-up-2">
+          {{ languagesData![language]!.name }}
+        </span>
+        <template #description>
+          <p
+            class="fade-up-3"
+            v-html="markdownT('translate.languageDescription')"
+          />
+        </template>
+      </title-with-subtitle>
+      <div class="fade-up-4">
+        <nuxt-link
+          class="back-button"
+          to="/translate/"
+        >
+          {{ t('translate.notYourLanguage') }}
+        </nuxt-link>
+        <div class="d-flex flew-row gap-2 align-items-center mt-3 mb-5 font-monospace">
+          <b-progress
+            class="flex-fill"
+            :max="1"
+            striped
+            :value="languagesData![language]!.progress"
+          />
+          {{ Math.round(languagesData![language]!.progress * 100) }}%
         </div>
       </div>
-      <b-accordion>
+      <b-accordion class="fade-up-5">
         <b-accordion-item
           v-for="(file, index) in files"
           :id="file.fileName"
           :key="file.fileName"
           :title="file.fileName"
+          header-tag="span"
         >
           <template #title>
-            <span class="font-monospace">
-              <icon
-                name="bi:file-earmark-text-fill"
-                class="me-2"
-              />{{ file.fileName }}
+            <span class="number">
+              {{ (index + 1).toString().padStart(2, '0') }}
             </span>
+            {{ file.fileName }}
           </template>
           <translation-table
             v-model="files[index]"
@@ -201,20 +219,20 @@ onUnmounted(removeGuard)
           />
           <b-row class="mb-0 mb-md-5">
             <b-col class="d-flex align-items-center mb-2 mb-md-0">
-              <b-button-group class="w-100 w-md-auto">
+              <div class="d-flex flex-row gap-2">
                 <b-button
-                  variant="dark"
+                  variant="outline-primary"
                   @click="load(index)"
                 >
                   <icon name="bi:upload" /> {{ t('translate.accordion.load') }}
                 </b-button>
                 <b-button
-                  variant="dark"
+                  variant="outline-primary"
                   @click="download(index)"
                 >
                   <icon name="bi:download" /> {{ t('translate.accordion.save') }}
                 </b-button>
-              </b-button-group>
+              </div>
             </b-col>
             <b-col class="d-flex align-items-center justify-content-end">
               <b-button
@@ -239,12 +257,5 @@ onUnmounted(removeGuard)
     <div v-else>
       <error-display :error="filesError ?? languagesError" />
     </div>
-  </b-container>
+  </container>
 </template>
-
-<style lang="scss" scoped>
-.back-button {
-  font-size: 0.75rem;
-  margin-bottom: 1rem;
-}
-</style>

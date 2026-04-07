@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import QrcodeVue from 'qrcode.vue'
-import AutoDetectButton from '~/components/Store/AutoDetectButton.vue'
 import { siteMeta } from '~/site'
+import Stats from '~/components/Stats/Stats.vue'
+import Stat from '~/components/Stats/Stat.vue'
+import Features from '~/components/Features/Features.vue'
+import Feature from '~/components/Features/Feature.vue'
+import Terminal from '~/components/Home/Terminal.vue'
+import DownloadApp from '~/components/Home/DownloadApp.vue'
+import MobilePhone from '~/components/Home/MobilePhone.vue'
 
 const { te, t } = useI18n()
 const markdownT = useMarkdownT()
@@ -19,192 +24,293 @@ const features = computed(() => {
 
 <template>
   <div>
-    <header class="pt-5 pb-5">
-      <b-container>
-        <b-row>
-          <b-col
-            sm="12"
-            md="7"
-            lg="8"
-            class="d-flex align-items-center"
-          >
-            <div class="text-center text-md-start mb-5 mb-md-0">
-              <h1>
-                <span class="d-block">{{ t('index.main.title.1') }}</span>
-                <span v-html="markdownT('index.main.title.2')" />
-              </h1>
-              <ul class="list-unstyled text-start mt-3 mb-5">
-                <li
-                  v-for="(feature, index) in features"
-                  :key="`feature-${index}`"
-                >
-                  <icon
-                    name="heroicons:check"
-                    class="me-2 text-primary"
-                  />
-                  <span v-html="feature" />
-                </li>
-              </ul>
-              <div class="d-inline-block text-center">
-                <b-button
-                  variant="primary"
-                  to="/#download"
-                  size="lg"
-                >
-                  <icon
-                    name="heroicons:arrow-down-tray"
-                    class="h-6 w-6"
-                  /> {{ t('index.main.downloadButton') }}
-                </b-button>
-                <div class="latest-version">
-                  <span class="fw-bold">
+    <header class="pt-2 pt-md-5 pb-5">
+      <container>
+        <b-container fluid>
+          <b-row>
+            <b-col
+              sm="12"
+              md="7"
+              class="d-flex align-items-center position-relative"
+            >
+              <blurred-stain class="z-0" />
+              <div class="z-1 position-relative text-md-start mb-5 mb-md-0">
+                <title-with-subtitle level="1">
+                  <template #before>
                     <client-only>
-                      <app-version>
+                      <pill
+                        class="fade-up-1"
+                        pulse
+                      >
+                        <app-version>
+                          <template #suffix>
+                            — {{ t('index.main.title.pill') }}
+                          </template>
+                        </app-version>
+                      </pill>
+                    </client-only>
+                  </template>
+                  <span
+                    class="fade-up-2"
+                    v-html="markdownT('index.main.title.content')"
+                  />
+                  <template #description>
+                    <ul class="fade-up-3 list-unstyled mb-5">
+                      <li
+                        v-for="(feature, index) in features"
+                        :key="`feature-${index}`"
+                      >
+                        <icon
+                          name="heroicons:check"
+                          class="me-2 text-primary"
+                        />
+                        <span v-html="feature" />
+                      </li>
+                    </ul>
+                  </template>
+                </title-with-subtitle>
+                <div>
+                  <div class="fade-up-4">
+                    <b-button
+                      variant="primary"
+                      to="/#download"
+                    >
+                      <icon
+                        name="heroicons:arrow-down-tray"
+                        class="h-6 w-6"
+                      /> {{ t('index.main.buttons.download') }}
+                    </b-button>
+                    <b-button
+                      variant="link"
+                      to="/#open-source"
+                    >
+                      {{ t('index.main.buttons.sourceCode') }}
+                      →
+                    </b-button>
+                  </div>
+                  <div class="latest-version fade-up-5 font-monospace text-muted">
+                    <client-only>
+                      <app-version class="text-primary">
                         <template #prefix>
                           <span
-                            class="fw-normal"
+                            class="text-muted"
                             v-text="t('index.main.latestVersion.text')"
                           />
                         </template>
-                        <template #suffix><span class="fw-normal">.</span></template>
-                      </app-version>
+                      </app-version> ·
                     </client-only>
-                  </span> <a
-                    :href="`${siteMeta.github}/blob/main/CHANGELOG.md`"
-                    v-text="t('index.main.latestVersion.changelog')"
-                  />.
+                    <a
+                      :href="`${siteMeta.github}/blob/main/CHANGELOG.md`"
+                      v-text="t('index.main.latestVersion.changelog')"
+                    />.
+                  </div>
                 </div>
               </div>
-            </div>
-          </b-col>
-          <b-col
-            sm="12"
-            md="5"
-            lg="4"
-            class="position-relative"
-          >
-            <blurred-stain :center="true" />
-            <mobile-phone class="phone">
-              <img
-                class="mw-100"
-                src="/images/screenshots/home.png"
-                alt="Screenshot"
-              >
-            </mobile-phone>
-          </b-col>
-        </b-row>
-      </b-container>
+            </b-col>
+            <b-col
+              sm="12"
+              md="5"
+              class="position-relative"
+            >
+              <mobile-phone class="fade-up-6">
+                <img
+                  class="mw-100"
+                  src="/images/screenshots/home.png"
+                  alt="Screenshot"
+                >
+              </mobile-phone>
+            </b-col>
+          </b-row>
+        </b-container>
+      </container>
     </header>
-    <div class="bg-dark text-light pt-5 pb-5">
-      <b-container>
-        <b-row>
-          <b-col
-            sm="12"
-            lg="9"
-          >
-            <div class="text-center text-lg-start">
-              <h2
-                id="download"
-                v-html="markdownT('index.download.title')"
-              />
-              <p
-                class="mt-3 mb-3"
-                v-html="markdownT('index.download.description')"
-              />
-            </div>
-            <auto-detect-button
-              :available-soon-text="(os: string) => t('index.download.storeButtons.availableSoonTemplate', { os: os })"
-              :available-on-text="(os: string) => t('index.download.storeButtons.availableOnTemplate', { os: os })"
-              :more-button="t('index.download.storeButtons.morePlatformsButton')"
+    <container
+      vertical-padding="2"
+      alternate
+    >
+      <stats>
+        <stat
+          stat="100%"
+          :title="t('index.stats.1')"
+        />
+        <stat
+          stat="0"
+          :title="t('index.stats.2')"
+        />
+        <stat
+          stat="5"
+          :title="t('index.stats.3')"
+        />
+        <stat
+          stat="GPL v3"
+          :title="t('index.stats.4')"
+        />
+      </stats>
+    </container>
+    <container>
+      <div class="pt-5 pb-2">
+        <title-with-subtitle>
+          <template #before>
+            {{ t('index.features.title.before') }}
+          </template>
+          <span v-html="markdownT('index.features.title.content')" />
+          <template #description>
+            <p class="mb-5">
+              {{ t('index.features.description') }}
+            </p>
+          </template>
+        </title-with-subtitle>
+      </div>
+      <Features>
+        <feature
+          emoji="🔐"
+          :title="t('index.features.1.title')"
+          :description="markdownT('index.features.1.description')"
+        />
+        <feature
+          emoji="☁️"
+          :title="t('index.features.2.title')"
+          :description="markdownT('index.features.2.description')"
+        />
+        <feature
+          emoji="🛡️"
+          :title="t('index.features.3.title')"
+          :description="markdownT('index.features.3.description')"
+        />
+        <feature
+          emoji="📱"
+          :title="t('index.features.4.title')"
+          :description="markdownT('index.features.4.description')"
+        />
+        <feature
+          emoji="🌍"
+          :title="t('index.features.5.title')"
+          :description="markdownT('index.features.5.description')"
+        />
+        <feature
+          emoji="⚡"
+          :title="t('index.features.6.title')"
+          :description="markdownT('index.features.6.description')"
+        />
+      </Features>
+    </container>
+    <container alternate>
+      <download-app :download-button="t('index.download.button')">
+        <div class="pb-2">
+          <title-with-subtitle>
+            <template #before>
+              {{ t('index.download.title.before') }}
+            </template>
+            <span
+              id="download"
+              v-html="markdownT('index.download.title.content')"
             />
-          </b-col>
-          <b-col class="align-items-center justify-content-center d-none d-lg-flex">
-            <qrcode-vue
-              :value="`${siteMeta.url}/#download`"
-              :size="200"
-              foreground="var(--bs-light)"
-              background="transparent"
-              render-as="svg"
-            />
-          </b-col>
-        </b-row>
-      </b-container>
-    </div>
-    <b-container class="pt-5 pb-5">
+            <template #description>
+              <p class="mb-5">
+                {{ t('index.download.description') }}
+              </p>
+            </template>
+          </title-with-subtitle>
+        </div>
+      </download-app>
+    </container>
+    <container fluid>
       <b-row>
         <b-col
-          class="d-none d-md-block position-relative"
-          md="6"
-          lg="5"
+          sm="12"
+          lg="6"
+          class="d-flex flex-column justify-content-center"
         >
-          <blurred-stain />
-          <window>
-            <div class="os-window">
-              <img
-                class="os-logo"
-                src="/images/logo.svg"
-                alt="Logo"
+          <div>
+            <title-with-subtitle>
+              <template #before>
+                {{ t('index.openSource.title.before') }}
+              </template>
+              <span
+                id="open-source"
+                v-html="markdownT('index.openSource.title.content')"
+              />
+              <template #description>
+                <p class="mb-4">
+                  {{ t('index.openSource.description.1') }}
+                </p>
+                <p class="mb-5">
+                  {{ t('index.openSource.description.2') }}
+                </p>
+              </template>
+            </title-with-subtitle>
+            <div class="d-flex flex-column flex-sm-row align-items-stretch gap-2">
+              <b-button
+                variant="primary"
+                :href="siteMeta.github"
               >
-              <span class="text-weight-bold">x</span>
-              <img
-                class="os-logo"
-                src="/images/home/github.svg"
-                alt="Github"
+                <icon name="bi:github" /> {{ t('index.openSource.linkButtons.github') }}
+              </b-button>
+              <b-button
+                variant="secondary"
+                href="https://paypal.me/Skyost"
               >
+                ☕ {{ t('index.openSource.linkButtons.donate') }}
+              </b-button>
+              <b-button
+                variant="secondary"
+                to="/translate/"
+              >
+                🌐 {{ t('index.openSource.linkButtons.translate') }}
+              </b-button>
             </div>
-          </window>
-        </b-col>
-        <b-col class="d-flex align-items-center">
-          <div class="text-center text-md-start">
-            <h2 v-html="markdownT('index.openSource.title')" />
-            <div class="mt-3 mb-3">
-              <p v-html="markdownT('index.openSource.description.1')" />
-              <p v-html="markdownT('index.openSource.description.2')" />
-            </div>
-            <b-row>
-              <b-col
-                sm="12"
-                lg="6"
-                class="mb-2 mb-lg-0"
-              >
-                <b-button
-                  class="w-100"
-                  variant="dark"
-                  :href="siteMeta.github"
-                >
-                  <icon name="bi:github" /> {{ t('index.openSource.linkButtons.github') }}
-                </b-button>
-              </b-col>
-              <b-col
-                sm="12"
-                lg="6"
-              >
-                <b-button
-                  class="w-100"
-                  variant="primary"
-                  to="/translate/"
-                >
-                  <icon name="bi:translate" /> {{ t('index.openSource.linkButtons.translate') }}
-                </b-button>
-              </b-col>
-              <b-col class="mt-2 mt-lg-3">
-                <b-button
-                  class="w-100"
-                  variant="light"
-                  href="https://paypal.me/Skyost"
-                >
-                  <icon name="bi:paypal" /> {{ t('index.openSource.linkButtons.paypal') }}
-                </b-button>
-              </b-col>
-            </b-row>
           </div>
         </b-col>
+        <b-col
+          sm="12"
+          lg="6"
+        >
+          <terminal class="mt-5 mt-lg-0" />
+        </b-col>
       </b-row>
-    </b-container>
+    </container>
+    <container
+      :offset-lg="3"
+      class="text-center position-relative"
+      alternate
+    >
+      <blurred-stain class="z-0" />
+      <div class="position-relative z-1">
+        <title-with-subtitle>
+          <template #before>
+            {{ t('index.getStarted.title.before') }}
+          </template>
+          <span v-html="markdownT('index.getStarted.title.content')" />
+          <template #description>
+            <p class="mb-5">
+              {{ t('index.getStarted.description') }}
+            </p>
+          </template>
+        </title-with-subtitle>
+        <b-button
+          variant="primary"
+          to="/#download"
+        >
+          <icon
+            name="heroicons:arrow-down-tray"
+            class="h-6 w-6"
+          /> {{ t('index.getStarted.buttons.download') }}
+        </b-button>
+        <b-button
+          variant="link"
+          to="/#open-source"
+        >
+          {{ t('index.getStarted.buttons.contribute') }}
+          →
+        </b-button>
+      </div>
+    </container>
   </div>
 </template>
 
 <style lang="scss" scoped>
+@import 'assets/colors';
+
 .os-window {
   display: flex;
   align-items: center;
@@ -217,6 +323,7 @@ const features = computed(() => {
 }
 
 .latest-version {
+  text-align: left;
   margin-top: 10px;
   font-size: 0.7rem;
 }

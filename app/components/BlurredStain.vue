@@ -1,8 +1,10 @@
 <script setup lang="ts">
 withDefaults(defineProps<{
   center?: boolean
+  size?: number | string
 }>(), {
   center: true,
+  size: 200,
 })
 </script>
 
@@ -10,6 +12,7 @@ withDefaults(defineProps<{
   <div
     class="blurred-stain"
     :class="{ center: center }"
+    :style="`--size: ${size}px;`"
   />
 </template>
 
@@ -20,13 +23,11 @@ withDefaults(defineProps<{
 @import 'assets/colors';
 
 .blurred-stain {
-  $size: 200px;
-
-  height: $size;
-  width: $size;
-  background-color: rgba($primary, 0.5);
+  height: var(--size);
+  width: var(--size);
+  background-color: #{rgb($green-glow, 0.15)};
   border-radius: 50%;
-  filter: blur(math.div($size, 2));
+  filter: blur(calc(var(--size) / 2));
 
   &.center {
     position: absolute;
@@ -35,7 +36,6 @@ withDefaults(defineProps<{
     right: 0;
     width: 100%;
     transform: translateY(-50%);
-    z-index: -1;
   }
 }
 </style>

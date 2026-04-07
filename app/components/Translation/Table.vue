@@ -89,7 +89,10 @@ const onUpdate = (key: string, value: string): void => {
       md="6"
     >
       <span>
-        <icon name="bi:paragraph" /> {{ $t('translate.table.originalText') }}
+        <icon
+          class="text-primary"
+          name="bi:paragraph"
+        /> {{ $t('translate.table.originalText') }}
       </span>
     </b-col>
     <b-col
@@ -98,7 +101,10 @@ const onUpdate = (key: string, value: string): void => {
       md="6"
     >
       <span class="font-bold">
-        <icon name="bi:translate" /> {{ $t('translate.table.translation') }}
+        <icon
+          class="text-primary"
+          name="bi:translate"
+        /> {{ $t('translate.table.translation') }}
       </span>
     </b-col>
     <template
@@ -111,8 +117,8 @@ const onUpdate = (key: string, value: string): void => {
         class="pb-3"
       >
         <b-form-group>
-          <template #description>
-            <span class="font-monospace"><icon name="bi:chevron-right" />{{ key }}</span>
+          <template #label>
+            <label class="form-label"><icon name="bi:chevron-right" />{{ key }}</label>
           </template>
           <client-only>
             <b-form-textarea
@@ -133,18 +139,23 @@ const onUpdate = (key: string, value: string): void => {
         md="6"
         class="pb-4"
       >
-        <client-only>
-          <b-form-textarea
-            :model-value="model.data[key]!.translatedValue"
-            :placeholder="model.data[key]!.originalValue"
-            @update:model-value="value => onUpdate(key, value?.toString() ?? '')"
-          />
-          <template #fallback>
-            <pre>
+        <b-form-group>
+          <template #label>
+            <label class="form-label opacity-0"><icon name="bi:chevron-right" />{{ key }}</label>
+          </template>
+          <client-only>
+            <b-form-textarea
+              :model-value="model.data[key]!.translatedValue"
+              :placeholder="model.data[key]!.originalValue"
+              @update:model-value="value => onUpdate(key, value?.toString() ?? '')"
+            />
+            <template #fallback>
+              <pre>
                 {{ model.data[key]!.translatedValue }}
               </pre>
-          </template>
-        </client-only>
+            </template>
+          </client-only>
+        </b-form-group>
       </b-col>
     </template>
   </b-row>
@@ -154,13 +165,17 @@ const onUpdate = (key: string, value: string): void => {
 @import 'assets/bootstrap-mixins';
 
 .title {
-  font-weight: bold;
   border-bottom: 1px solid var(--bs-secondary-bg);
   padding: 6px;
   margin-bottom: 10px;
+  color: var(--bs-secondary-color);
 
   @include media-breakpoint-down(md) {
     display: none !important;
   }
+}
+
+label {
+  color: var(--bs-body-color);
 }
 </style>

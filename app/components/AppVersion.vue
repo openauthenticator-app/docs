@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data } = useFetch(`/_app/version.json`)
+const { data } = useFetch<{ version: string }>(`/_app/version.json`)
 </script>
 
 <template>
