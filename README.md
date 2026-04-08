@@ -1,75 +1,67 @@
-# Nuxt 3 Minimal Starter
+<div align="center">
+  <a href="https://openauthenticator.app">
+    <img src="https://github.com/Skyost/OpenAuthenticator/raw/main/docs/public/images/logo.svg" alt="Logo" width="120" height="120">
+  </a>
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+  <h3>Open Authenticator Docs</h3>
 
-## Setup
+  <p>
+    The official website of Open Authenticator.
+    <br />
+    <a href="https://openauthenticator.app"><strong>Check it out »</strong></a>
+    <br />
+    <br />
+    <a href="https://openauthenticator.app">Website</a>
+    ·
+    <a href="https://github.com/openauthenticator-app/openauthenticator">App</a>
+    ·
+    <a href="https://github.com/openauthenticator-app/backend">Backend</a>
+    ·
+    <a href="https://openauthenticator.app/#contribute">Contribute</a>
+  </p>
+</div>
 
-Make sure to install the dependencies:
+![GitHub License](https://img.shields.io/github/license/openauthenticator-app/docs)
+![GitHub top language](https://img.shields.io/github/languages/top/openauthenticator-app/docs)
+![GitHub Repo stars](https://img.shields.io/github/stars/openauthenticator-app/docs)
 
-```bash
-# npm
+## About the app and this repository
+
+[Open Authenticator](https://github.com/openauthenticator-app/openauthenticator) is a free, open-source and cross-platform TOTP manager. This repository contains the source code of its website.
+
+_If you like this project, consider starring it on GitHub !_
+
+## Development
+
+This website has been created with [Nuxt](https://nuxt.com). To run it locally, you'll have to clone the repository first :
+
+```sh
+git clone https://github.com/openauthenticator-app/docs.git
+```
+
+Then :
+
+```sh
+cd docs
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Done. The website is up and running at http://localhost:3000.
 
-Build the application for production:
+## License
 
-```bash
-# npm
-npm run build
+Open Authenticator Docs website is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/).
 
-# pnpm
-pnpm run build
+## Contribute
 
-# yarn
-yarn build
+If you like this project, there are a lot of ways for you to contribute to it !
+Please read the [contribution guide](/blob/main/CONTRIBUTING.md) before getting started.
 
-# bun
-bun run build
-```
+### Report bugs or suggest new features
 
-Locally preview production build:
+You can report bugs or suggest new features in the [issue tracker](/issues).
 
-```bash
-# npm
-npm run preview
+### Donate
 
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+You can donate for this project using either [PayPal](http://paypal.me/Skyost), [Ko-Fi](https://ko-fi.com/Skyost) or [Github sponsors](https://github.com/sponsors/Skyost). If you don't want to donate, any [kind message](https://openauthenticator.app/contact) is also appreciated !
