@@ -92,8 +92,8 @@ npm run preview
 
 ## Contributing
 
-Contributions are more than welcome. For setup details, contribution rules and PR expectations, read
-[CONTRIBUTING.md](https://github.com/openauthenticator-app/docs/blob/main/CONTRIBUTING.md).
+Contributions are more than welcome. For setup details, contribution rules and PR expectations, read the
+[guidelines](https://github.com/openauthenticator-app/backend/blob/main/CONTRIBUTING.md).
 
 You can also help by :
 
