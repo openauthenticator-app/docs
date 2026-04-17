@@ -38,6 +38,9 @@ Open Authenticator Docs is the public-facing website for the Open Authenticator 
 - a translation page ;
 - privacy policy and terms of service.
 
+> [!TIP]
+> If you like this project, consider starring it on GitHub !
+
 ## Requirements
 
 Open Authenticator Docs is powered by [Nuxt](https://nuxt.com), therefore, you will need to have
