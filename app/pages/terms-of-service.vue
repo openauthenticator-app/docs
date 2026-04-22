@@ -3,6 +3,21 @@ import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
 const markdownT = useMarkdownT()
+const thirdPartyTermsKeys = [
+  'googlePlayServices',
+  'appleMediaServices',
+  'cloudflare',
+  'revenueCat',
+  'google',
+  'apple',
+  'github',
+  'microsoft',
+  'logoDev',
+  'brandfetch',
+  'upLead',
+  'wikimedia',
+  'firebase',
+]
 watch(
   locale,
   () => usePageHead({ title: t('termsOfService.title.content') }),
@@ -34,8 +49,11 @@ watch(
         <p v-html="markdownT('termsOfService.dataProcessing')" />
         <p v-html="markdownT('termsOfService.thirdPartyTerms')" />
         <ul>
-          <li v-html="markdownT('termsOfService.thirdPartyTermsList.googlePlayServices')" />
-          <li v-html="markdownT('termsOfService.thirdPartyTermsList.revenueCat')" />
+          <li
+            v-for="key in thirdPartyTermsKeys"
+            :key="key"
+            v-html="markdownT(`termsOfService.thirdPartyTermsList.${key}`)"
+          />
         </ul>
         <p v-html="markdownT('termsOfService.responsibility')" />
         <p v-html="markdownT('termsOfService.charges')" />

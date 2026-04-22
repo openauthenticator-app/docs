@@ -3,6 +3,20 @@ import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
 const markdownT = useMarkdownT()
+const thirdPartyProviderKeys = [
+  'googlePlayServices',
+  'cloudflare',
+  'revenueCat',
+  'google',
+  'apple',
+  'github',
+  'microsoft',
+  'logoDev',
+  'brandfetch',
+  'upLead',
+  'wikimedia',
+  'firebase',
+]
 watch(
   locale,
   () => usePageHead({ title: t('privacyPolicy.title.content') }),
@@ -47,10 +61,12 @@ watch(
         <h2 v-html="markdownT('privacyPolicy.thirdPartyProviders.title')" />
         <p v-html="markdownT('privacyPolicy.thirdPartyProviders.content')" />
         <ul>
-          <li v-html="markdownT('privacyPolicy.thirdPartyProviders.list.googlePlayServices')" />
-          <li v-html="markdownT('privacyPolicy.thirdPartyProviders.list.revenueCat')" />
+          <li
+            v-for="key in thirdPartyProviderKeys"
+            :key="key"
+            v-html="markdownT(`privacyPolicy.thirdPartyProviders.list.${key}`)"
+          />
         </ul>
-        <p v-html="markdownT('privacyPolicy.thirdPartyProviders.content')" />
       </section>
       <section class="fade-up-5">
         <h2 v-html="markdownT('privacyPolicy.disclosure.title')" />

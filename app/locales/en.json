@@ -167,32 +167,42 @@
   },
   "privacyPolicy": {
     "title": {
-      "lastUpdated": "Last updated April 6, 2026",
+      "lastUpdated": "Last updated April 22, 2026",
       "content": "Privacy policy."
     },
     "intro": "This privacy policy is applicable to the Open Authenticator app (hereinafter referred to as \"Application\") for mobile devices, which was developed by Skyost (hereinafter referred to as \"Service Provider\") as a subscription supported service. This service is provided \"AS IS\".",
     "userProvidedInfo": {
       "title": "User Provided Information",
-      "content": "The Application acquires the information you supply when you download and register the\nApplication. Registration with the Service Provider is not mandatory.\nHowever, bear in mind that you might not be able to utilize some of the features offered by the\nApplication unless you register with them. The Service Provider may also use the information you provided\nthem to contact you from time to time to provide you with important information, required notices,\nand marketing promotions."
+      "content": "The Application acquires the information you supply when you download, configure, register, log in to,\nor use the Application. Registration with the Service Provider is not mandatory for local-only use.\nHowever, you must register or log in to use synchronization, provider linking, account deletion, and\nsubscription-related features. Depending on the login method you choose, the Service Provider may process\nyour email address or the identifier returned by your authentication provider (Google, Apple, GitHub, or\nMicrosoft), as well as a backend user identifier, linked providers, your subscription status, and a stable\nApplication installation identifier used to bind sessions to your device. If you use email login, the\nService Provider processes your email address and temporary verification, cancellation, and authorization\ncodes in order to complete the login flow."
     },
     "automaticallyCollectedInfo": {
       "title": "Automatically Collected Information",
-      "content": "In addition, the Application may collect certain information automatically, including,\nbut not limited to, the type of mobile device you use, your mobile device`s unique device ID, the IP address\nof your mobile device, your mobile operating system, the type of mobile Internet browsers you use,\nand information about the way you use the Application.\nThis data collection is needed in order to better understand crash logs."
+      "content": "In addition, the Application and its backend may collect certain information automatically, including,\nbut not limited to, the type of device you use, the stable Application installation identifier generated\nby the Application, your IP address, your operating system, your app version, your user agent, request\nheaders needed to operate the backend, and information about the way you use the Application.\nThis information is used to provide the service, secure sessions, enforce rate limits, maintain\ncompatibility, and troubleshoot issues.\nThe Application and backend also send diagnostic information to a private GlitchTip instance, using the\nSentry-compatible error reporting protocol, when bugs or crashes occur. These reports may include\ntechnical details such as the app version, operating system version, device model, error message,\nstack trace, timestamp, recent actions in the Application, and, for backend errors, request information\nsuch as the HTTP method, URL, and request headers. Your master password and TOTP secrets are not\nintentionally sent in these reports."
     },
     "locationInfo": {
       "title": "Does the Application collect precise real-time location information of the device ?",
-      "content": "This Application does not gather precise information about the location of your mobile device."
+      "content": "This Application does not gather precise information about the location of your device.\nThe Application may request camera access only to scan TOTP QR codes. Camera images are processed on\nyour device for scanning and are not intentionally sent to the Service Provider.\nIf you enable biometric or local authentication, authentication is handled by your device operating system;\nthe Application does not receive or transmit your biometric data."
     },
     "thirdPartyAccess": {
       "title": "Do third parties see and/or have access to information obtained by the Application ?",
-      "content": "Only aggregated, anonymized data is periodically transmitted to internal services to aid the\nService Provider in improving the Application and their service. The Service Provider may share your\ninformation with third parties in the ways that are described in this privacy statement."
+      "content": "Aggregated, anonymized data may be periodically transmitted to internal services to aid the\nService Provider in improving the Application and their service. Diagnostic information related to bugs\nor crashes may be transmitted to the Service Provider's private GlitchTip instance for error monitoring\nand troubleshooting. Data needed to operate the service may be processed by infrastructure providers,\nauthentication providers, RevenueCat, app stores, and optional logo search services when you use the\ncorresponding features. The Service Provider may share your information with third parties in the ways\nthat are described in this privacy statement."
     },
     "thirdPartyProviders": {
       "title": "Third-Party Providers",
       "content": "Please note that the Application utilizes third-party services that have their own\nPrivacy Policy about handling data. Below are the links to the Privacy Policy of the\nthird-party service providers used by the Application :",
       "list": {
         "googlePlayServices": "[Google Play Services](https://www.google.com/policies/privacy/)",
-        "revenueCat": "[RevenueCat](https://www.revenuecat.com/privacy)"
+        "cloudflare": "[Cloudflare](https://www.cloudflare.com/privacypolicy/)",
+        "revenueCat": "[RevenueCat](https://www.revenuecat.com/privacy/)",
+        "google": "[Google](https://policies.google.com/privacy)",
+        "apple": "[Apple](https://www.apple.com/legal/privacy/en-ww/)",
+        "github": "[GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement)",
+        "microsoft": "[Microsoft](https://www.microsoft.com/en-us/privacy/privacystatement)",
+        "logoDev": "[Logo.dev](https://www.logo.dev/legal/privacy)",
+        "brandfetch": "[Brandfetch](https://brandfetch.com/privacy)",
+        "upLead": "[UpLead](https://www.uplead.com/privacy/)",
+        "wikimedia": "[Wikimedia Foundation](https://foundation.wikimedia.org/wiki/Policy:Privacy_policy)",
+        "firebase": "[Firebase / Google](https://policies.google.com/privacy)"
       }
     },
     "disclosure": {
@@ -210,7 +220,7 @@
     },
     "dataRetention": {
       "title": "Data Retention Policy, Managing Your Information",
-      "content": "The Service Provider will retain User Provided data for as long as you use the\nApplication and for a reasonable time thereafter. The Service Provider will retain Automatically Collected\ninformation for up to 24 months and thereafter may store it in aggregate.\nIf you'd like the Service Provider to delete User Provided Data that you have provided via the Application,\nplease [contact them](/contact/) and they will respond in a reasonable time.\nPlease note that some or all of the User Provided Data may be required in order for the Application\nto function properly.\nYour master password is not transmitted to any remote server.\n**If you forget it, we cannot help your recovering it.**\nPlease be aware that, although we endeavor provide reasonable security for\ninformation we process and maintain, no security system can prevent all potential security breaches."
+      "content": "The Service Provider will retain User Provided data for as long as you use the\nApplication and for a reasonable time thereafter. Backend refresh sessions are normally retained until\nthey expire or are revoked. Deleted TOTP synchronization markers and processed RevenueCat webhook event\nrecords may be retained for up to 365 days before pruning. Inactive non-contributor accounts without\nactive sessions or stored TOTPs may be pruned.\nIf you delete your account from the Application, the Service Provider deletes the backend user record,\nbackend sessions, and synchronized TOTP data controlled by the Service Provider. Data held by third-party\nproviders, app stores, or RevenueCat remains subject to their own retention and account-management rules.\nThe Service Provider will retain Automatically Collected information for up to 24 months and thereafter\nmay store it in aggregate.\nIf you'd like the Service Provider to delete User Provided Data that you have provided via the Application,\nplease [contact them](/contact/) and they will respond in a reasonable time.\nPlease note that some or all of the User Provided Data may be required in order for the Application\nto function properly.\nYour master password is not transmitted to any remote server.\n**If you forget it, we cannot help you recover it.**\nPlease be aware that, although we endeavor to provide reasonable security for\ninformation we process and maintain, no security system can prevent all potential security breaches."
     },
     "children": {
       "title": "Children",
@@ -218,7 +228,7 @@
     },
     "security": {
       "title": "Security",
-      "content": "The Service Provider is concerned about safeguarding the confidentiality of your information.\nThe Service Provider provides physical, electronic, and procedural safeguards to protect information we\nprocess and maintain. For example, if you choose to synchronize your data between your devices,\nwe use Cloudflare D1 to store your TOTPs.\nTheir [secret & metadata](https://en.wikipedia.org/wiki/Time-based_one-time_password#Security) are\nencrypted using an [AES-GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm with an\n[Argon2](https://en.wikipedia.org/wiki/Argon2) derived key based on your master password and a random salt."
+      "content": "The Service Provider is concerned about safeguarding the confidentiality of your information.\nThe Service Provider provides physical, electronic, and procedural safeguards to protect information we\nprocess and maintain. If you choose to synchronize your data between your devices, the backend stores\nyour TOTP records in encrypted form. The TOTP secret, label, issuer, and image URL are encrypted using\nan [AES-GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm with an\n[Argon2](https://en.wikipedia.org/wiki/Argon2) derived key based on your master password and a random salt.\nSome synchronization metadata, such as the TOTP UUID, algorithm, digit count, validity period, update\ntime, and deletion markers, may be stored without being encrypted by the master password so synchronization\ncan work correctly."
     },
     "changes": {
       "title": "Changes",
@@ -233,20 +243,31 @@
   },
   "termsOfService": {
     "title": {
-      "lastUpdated": "Last updated April 6, 2026",
+      "lastUpdated": "Last updated April 22, 2026",
       "content": "Terms & Conditions."
     },
     "intro": "These terms and conditions applies to the Open Authenticator app (hereby referred to as \"Application\")\nfor mobile devices that was created by Skyost (hereby referred to as \"Service Provider\") as a subscription supported service.",
     "agreement": "Upon downloading or utilizing the Application, you are automatically agreeing to the following terms\nand to the [Privacy policy](/privacy-policy).\nIt is strongly advised that you thoroughly read and understand these terms prior to using the Application.\nUnauthorized copying, modification of the Application, any part of the Application, or our trademarks\nis strictly prohibited.\nAny attempts to create derivative versions or \"copycats\" are not permitted.\nAll trademarks, copyrights, database rights, and other intellectual property rights related to the\nApplication remain the property of the Service Provider.",
     "modification": "The Service Provider is dedicated to ensuring that the Application is as beneficial and efficient as\npossible. As such, they reserve the right to modify the Application or charge for their services at\nany time and for any reason. The Service Provider assures you that any charges for the Application or\nits services will be clearly communicated to you.",
-    "dataProcessing": "The Application stores and processes personal data that you have provided to the Service Provider in\norder to provide the Service. It is your responsibility to maintain the security of your phone and\naccess to the Application. The Service Provider strongly advise against jailbreaking or rooting your\nphone, which involves removing software restrictions and limitations imposed by the official operating\nsystem of your device. Such actions could expose your phone to malware, viruses, malicious programs,\ncompromise your phone's security features, and may result in the Application not functioning correctly\nor at all.",
+    "dataProcessing": "The Application stores and processes personal data that you have provided to the Service Provider in\norder to provide the Service, including account, authentication, synchronization, diagnostic, and\nsubscription-related data as described in the Privacy Policy. It is your responsibility to maintain the\nsecurity of your device and access to the Application. The Service Provider strongly advises against\njailbreaking or rooting your phone, which involves removing software restrictions and limitations imposed\nby the official operating system of your device. Such actions could expose your phone to malware, viruses,\nmalicious programs, compromise your phone's security features, and may result in the Application not\nfunctioning correctly or at all.",
     "thirdPartyTerms": "Please note that the Application utilizes third-party services that have their own Terms and Conditions.\nBelow are the links to the Terms and Conditions of the third-party service providers used by the\nApplication :",
     "thirdPartyTermsList": {
-      "googlePlayServices": "[Google Play Services](https://www.google.com/policies/privacy/)",
-      "revenueCat": "[RevenueCat](https://www.revenuecat.com/privacy)"
+      "googlePlayServices": "[Google Play Services](https://play.google.com/intl/en_us/about/play-terms/)",
+      "appleMediaServices": "[Apple Media Services](https://www.apple.com/legal/internet-services/itunes/us/terms.html)",
+      "cloudflare": "[Cloudflare](https://www.cloudflare.com/website-terms/)",
+      "revenueCat": "[RevenueCat](https://www.revenuecat.com/terms/)",
+      "google": "[Google](https://policies.google.com/terms)",
+      "apple": "[Apple](https://www.apple.com/legal/internet-services/itunes/us/terms.html)",
+      "github": "[GitHub](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service)",
+      "microsoft": "[Microsoft](https://www.microsoft.com/en-US/servicesagreement)",
+      "logoDev": "[Logo.dev](https://www.logo.dev/legal/terms)",
+      "brandfetch": "[Brandfetch](https://brandfetch.com/terms)",
+      "upLead": "[UpLead](https://www.uplead.com/terms-and-conditions/)",
+      "wikimedia": "[Wikimedia Foundation](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use)",
+      "firebase": "[Firebase / Google](https://policies.google.com/terms)"
     },
     "responsibility": "Please be aware that the Service Provider does not assume responsibility for certain aspects.\nSome functions of the Application require an active internet connection, which can be Wi-Fi or provided\nby your mobile network provider. The Service Provider cannot be held responsible if the Application does\nnot function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance.",
-    "charges": "If you are using the application outside of a Wi-Fi area, please be aware that your mobile network\nprovider's agreement terms still apply. Consequently, you may incur charges from your mobile provider\nfor data usage during the connection to the application, or other third-party charges.\nBy using the application, you accept responsibility for any such charges, including roaming data\ncharges if you use the application outside of your home territory (i.e., region or country) without\ndisabling data roaming.\nIf you are not the bill payer for the device on which you are using the application, they assume\nthat you have obtained permission from the bill payer.",
+    "charges": "If you are using the application outside of a Wi-Fi area, please be aware that your mobile network\nprovider's agreement terms still apply. Consequently, you may incur charges from your mobile provider\nfor data usage during the connection to the application, or other third-party charges.\nBy using the application, you accept responsibility for any such charges, including roaming data\ncharges if you use the application outside of your home territory (i.e., region or country) without\ndisabling data roaming.\nThe Contributor Plan is handled through the applicable app store, RevenueCat, or RevenueCat Web Billing,\ndepending on your platform. Subscriptions may renew automatically and must be managed or cancelled\nthrough the platform or billing provider that processed the purchase. Refunds, trials, renewals, and\ncancellations are subject to the rules of the applicable platform and to mandatory consumer protection laws.\nIf you are not the bill payer for the device on which you are using the application, they assume\nthat you have obtained permission from the bill payer.",
     "battery": "Similarly, the Service Provider cannot always assume responsibility for your usage of the application.\nFor instance, it is your responsibility to ensure that your device remains charged.\nIf your device runs out of battery and you are unable to access the Service, the Service Provider\ncannot be held responsible.",
     "termination": "The Service Provider may wish to update the application at some point.\nThe application is currently available as per the requirements for the operating system\n(and for any additional systems they decide to extend the availability of the application to) may change,\nand you will need to download the updates if you want to continue using the application.\nThe Service Provider does not guarantee that it will always update the application so that it is relevant\nto you and/or compatible with the particular operating system version installed on your device.\nHowever, you agree to always accept updates to the application when offered to you.\nThe Service Provider may also wish to cease providing the application and may terminate its use at any\ntime without providing termination notice to you. Unless they inform you otherwise, upon any termination,\n(a) the rights and licenses granted to you in these terms will end; (b) you must cease using the application,\nand (if necessary) delete it from your device.",
     "legalRiskResponsibility": {
@@ -257,7 +278,7 @@
       },
       "synchronizationSecurity": {
         "title": "Synchronization and security",
-        "content": "If you choose to synchronize your Data (including but not limited to : your TOTPs, your\nmail address, your Firebase automatically generated user id, etc.) between your devices, you acknowledge\nthat it will be stored on Firebase servers.\nPlease be aware that, although we endeavor provide reasonable security for information we process and\nmaintain, no security system can prevent all potential security breaches.\nTherefore, we are not liable for any data loss, any leak or any damage resulting from the use of\nthe application."
+        "content": "If you choose to synchronize your Data between your devices, you acknowledge that encrypted TOTP data,\nsynchronization metadata, account identifiers, authentication-provider identifiers, sessions, and\nsubscription status may be stored on the Service Provider's backend and infrastructure providers.\nLegacy Firebase data may be processed if you use the migration feature from an older version of the\nApplication. Please be aware that, although we endeavor to provide reasonable security for information we\nprocess and maintain, no security system can prevent all potential security breaches.\nTherefore, we are not liable for any data loss, any leak, or any damage resulting from the use of\nthe application."
       },
       "releaseIndemnity": {
         "title": "Release and indemnity",
