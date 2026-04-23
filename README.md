@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://openauthenticator.app">
+  <a href="https://openauthenticator.app/images/logo.svg">
     <img src="https://github.com/Skyost/OpenAuthenticator/raw/main/docs/public/images/logo.svg" alt="Logo" width="120" height="120">
   </a>
 
