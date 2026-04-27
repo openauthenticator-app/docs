@@ -1,0 +1,38 @@
+{
+  "subscribeSuccess": {
+    "immediate": "Vous vous êtes abonné avec succès à l'Abonnement Contributeur. Merci beaucoup !",
+    "delayed": "L'achat a réussi ! Vous devrez peut-être attendre quelques minutes ou redémarrer l'application."
+  },
+  "fallbackPaywall": {
+    "title(rich)": "Abonnement ${title(Contributeur)}",
+    "features": [
+      "Synchronisez autant de TOTPs que vous souhaitez.",
+      "Contribuez à l'Open Source.",
+      "Aidez au développement de l'application."
+    ],
+    "packageType": {
+      "choose": "Choisissez votre plan de souscription :",
+      "empty": "Vous ne pouvez pas souscrire à l'Abonnement Contributeur actuellement.",
+      "name(map)": {
+        "annual": "Annuelle",
+        "monthly": "Mensuelle"
+      },
+      "interval(map)": {
+        "annual": "An",
+        "monthly": "Mois"
+      },
+      "price(rich)": "$price / $interval",
+      "subtitle(map)": {
+        "annual": "Une facturation par an.",
+        "monthly": "Une facturation par mois."
+      }
+    },
+    "button": {
+      "subscribed": "Abonnement effectué !",
+      "privacyPolicy": "Politique de confidentialité",
+      "termsOfService": "Conditions d'utilisation",
+      "restorePurchases": "Restaurer les achats"
+    },
+    "restorePurchasesSuccess": "Vos achats ont été restauré avec succès !"
+  }
+}
