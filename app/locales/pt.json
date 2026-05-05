@@ -1,0 +1,410 @@
+{
+  "navbar": {
+    "index": "Início",
+    "faq": "FAQ",
+    "privacyPolicy": "Política de privacidade",
+    "termsOfService": "Termos de serviço",
+    "contact": "Contato",
+    "downloadButton": "Baixar"
+  },
+  "footer": {
+    "app": {
+      "title": "Aplicativo",
+      "index": "Início",
+      "download": "Download",
+      "translation": "Tradução"
+    },
+    "legal": {
+      "title": "Legal",
+      "license": "Licença",
+      "privacyPolicy": "Política de privacidade",
+      "termsOfService": "Termos de serviço",
+      "contact": "Contato"
+    },
+    "language": "Idioma"
+  },
+  "index": {
+    "main": {
+      "title": {
+        "pill": "Já disponível",
+        "content": "Proteja suas contas.<br>*De verdade.*"
+      },
+      "features": {
+        "1": "Gratuito e open-source.",
+        "2": "Sincronize facilmente seus TOTPs (*Time-based One-Time Password*).",
+        "3": "Proteja seus dados.",
+        "4": "Use em (quase) qualquer plataforma."
+      },
+      "buttons": {
+        "download": "Baixar agora",
+        "sourceCode": "Ver o código-fonte"
+      },
+      "latestVersion": {
+        "text": "Versão mais recente:",
+        "changelog": "Changelog"
+      }
+    },
+    "stats": {
+      "1": "Gratuito e open-source",
+      "2": "Anúncio ou rastreador",
+      "3": "Plataformas compatíveis",
+      "4": "Licença open-source"
+    },
+    "features": {
+      "1": {
+        "title": "Formato padrão",
+        "description": "Compatível com todos os serviços que aceitam autenticação de dois fatores: Google, GitHub, Discord e milhares de outros."
+      },
+      "2": {
+        "title": "Sincronização",
+        "description": "Seria uma pena perder o acesso às suas contas ao trocar de telefone. Você também pode hospedar o backend por conta própria, se quiser ([mais informações](https://github.com/openauthenticator-app/backend))."
+      },
+      "3": {
+        "title": "Dados privados",
+        "description": "Seus dados são criptografados antes de serem transmitidos usando uma chave derivada de uma senha mestra."
+      },
+      "4": {
+        "title": "Multiplataforma",
+        "description": "Um projeto, todas as plataformas. Android, iOS, macOS, Windows e Linux — criado com Flutter."
+      },
+      "5": {
+        "title": "Traduções",
+        "description": "O app é multilíngue e traduzido pela comunidade. Junte-se aos colaboradores e ajude a torná-lo acessível a todos."
+      },
+      "6": {
+        "title": "Ultraleve",
+        "description": "Sem excesso, sem permissões desnecessárias. O app faz o que promete, e nada além disso, rapidamente."
+      },
+      "title": {
+        "before": "Recursos",
+        "content": "Tudo o que você precisa.<br>*Nada mais.*"
+      },
+      "description": "Criado para ser simples, confiável e respeitar seus dados. Sem comprometer a segurança."
+    },
+    "download": {
+      "title": {
+        "before": "Download",
+        "content": "Disponível em todos os lugares."
+      },
+      "description": "Criado com Flutter, o Open Authenticator roda nativamente em todas as principais plataformas. Escolha a sua.",
+      "button": "Baixar"
+    },
+    "openSource": {
+      "title": {
+        "before": "Open-source",
+        "content": "Aberto para todos."
+      },
+      "description": {
+        "1": "O código-fonte é totalmente público sob a licença GNU GPL v3. Você pode auditá-lo, criar um fork, contribuir ou simplesmente confiar nele.",
+        "2": "Quer ajudar? Contribua com pull requests no GitHub, sugira novas traduções ou faça uma doação para apoiar o projeto."
+      },
+      "linkButtons": {
+        "github": "Github",
+        "translate": "Traduzir",
+        "donate": "Doar"
+      }
+    },
+    "getStarted": {
+      "title": {
+        "before": "Começar",
+        "content": "Proteja suas contas<br>*agora.*"
+      },
+      "description": "Gratuito, open-source, multiplataforma e fácil de usar. Sem anúncios, sem rastreamento, sem coleta de dados. Baixe o Open Authenticator agora e retome o controle da sua segurança.",
+      "buttons": {
+        "download": "Baixar gratuitamente",
+        "contribute": "Contribuir"
+      }
+    }
+  },
+  "faq": {
+    "title": {
+      "lastUpdated": "Última atualização em 06 de abril de 2026",
+      "content": "Perguntas *frequentes.*"
+    },
+    "pageTitle": "Perguntas frequentes",
+    "description": "Tudo o que você precisa saber sobre o Open Authenticator — segurança, privacidade e mais.",
+    "questions": {
+      "1": {
+        "question": "O que devo fazer se esquecer minha senha mestra?",
+        "answer": "Não há nada que possamos fazer. De verdade. Seus TOTPs são criptografados com uma chave derivada da sua senha mestra usando o algoritmo [Argon2](https://en.wikipedia.org/wiki/Argon2). Não poderemos recuperar seus dados se você esquecer sua senha mestra. Por esse motivo, recomendamos fortemente fazer backups regulares.\n\nO app pede automaticamente que você faça um backup antes de cada operação sensível, mas você também pode criar um manualmente nas configurações do app."
+      },
+      "2": {
+        "question": "Onde meus dados ficam armazenados?",
+        "answer": "Se você não ativou a sincronização de dados, tudo fica armazenado localmente em um banco SQLite gerenciado com [Drift](https://drift.simonbinder.eu/). Mesmo assim, tudo é criptografado.\n\nSe você ativou a sincronização de dados, tudo fica armazenado em formato simples no nosso backend, cujo código-fonte está disponível [aqui](https://github.com/openauthenticator-app/backend)."
+      },
+      "3": {
+        "question": "O que é a Assinatura de Colaborador?",
+        "answer": "Como você talvez saiba, servidores não são gratuitos. No nosso caso, quanto mais usuários temos, maiores são os custos. Portanto, estas são as opções disponíveis.\n\n1. Colocamos anúncios no app.\n2. Dependemos exclusivamente de doações.\n3. Pedimos aos usuários que contribuam com os custos operacionais.\n\nA opção 2 não é nada realista. A opção 1 poderia ser uma solução, mas anúncios geralmente prejudicam a experiência do usuário e envolvem rastreadores. Por isso, a escolha que fizemos para cobrir os custos foi criar um modelo de assinatura chamado *Assinatura de Colaborador*. Atualmente, você pode armazenar e sincronizar até seis TOTPs gratuitamente em todos os seus dispositivos. Ao assinar a Assinatura de Colaborador, poderá sincronizar quantos TOTPs quiser.\n\nNo futuro, esperamos reduzir essas limitações, ou até removê-las completamente. Em qualquer caso, você pode usar o app localmente sem limitações e sem anúncios."
+      },
+      "4": {
+        "question": "Preciso baixar isso mesmo se meu gerenciador de senhas suporta TOTPs?",
+        "answer": "Sim, você deveria. Se o seu gerenciador de senhas fosse comprometido, suas senhas *e* seus TOTPs seriam expostos ao mesmo tempo. Portanto, o segundo fator de autenticação deixaria de cumprir sua função.\n\n*Não coloque todos os ovos na mesma cesta!*"
+      },
+      "5": {
+        "question": "Não consigo ativar a autenticação local no Linux. O que devo fazer?",
+        "answer": "Se esse é o seu caso, provavelmente significa que o Open Authenticator foi instalado via Flatpak.\n\nA autenticação local no Linux depende de um arquivo de política Polkit que deve estar presente no sistema host em `/usr/share/polkit-1/actions`.\n\nSe ele não estiver presente, você pode instalá-lo copiando [este arquivo](https://flatpak.openauthenticator.app/app.openauthenticator.policy) para `/usr/share/polkit-1/actions`. Depois reinicie o Open Authenticator (ou sua sessão)."
+      },
+      "6": {
+        "question": "É possível hospedar o backend por conta própria?",
+        "answer": "Sim. Desde a versão v2.0.0 do app, você pode hospedar o backend no seu próprio servidor. As instruções estão disponíveis na [página do backend no GitHub](https://github.com/openauthenticator-app/backend) (em inglês)."
+      }
+    },
+    "categories": {
+      "all": "Todas as categorias",
+      "security": "Segurança",
+      "privacy": "Privacidade",
+      "subscription": "Assinatura",
+      "platforms": "Plataformas"
+    },
+    "questionLeft": {
+      "title": {
+        "before": "Ainda tem perguntas?",
+        "content": "Estamos aqui para ajudar."
+      },
+      "description": "Um tópico não foi abordado aqui? Fique à vontade para perguntar qualquer coisa. Responderemos o mais rápido possível.",
+      "askButton": "Faça sua pergunta"
+    }
+  },
+  "privacyPolicy": {
+    "title": {
+      "lastUpdated": "Última atualização em 22 de abril de 2026",
+      "content": "Política de privacidade."
+    },
+    "intro": "This privacy policy is applicable to the Open Authenticator app (hereinafter referred to as \"Application\") for mobile devices, which was developed by Skyost (hereinafter referred to as \"Service Provider\") as a subscription supported service. This service is provided \"AS IS\".",
+    "userProvidedInfo": {
+      "title": "User Provided Information",
+      "content": "The Application acquires the information you supply when you download, configure, register, log in to,\nor use the Application. Registration with the Service Provider is not mandatory for local-only use.\nHowever, you must register or log in to use synchronization, provider linking, account deletion, and\nsubscription-related features. Depending on the login method you choose, the Service Provider may process\nyour email address or the identifier returned by your authentication provider (Google, Apple, GitHub, or\nMicrosoft), as well as a backend user identifier, linked providers, your subscription status, and a stable\nApplication installation identifier used to bind sessions to your device. If you use email login, the\nService Provider processes your email address and temporary verification, cancellation, and authorization\ncodes in order to complete the login flow."
+    },
+    "automaticallyCollectedInfo": {
+      "title": "Automatically Collected Information",
+      "content": "In addition, the Application and its backend may collect certain information automatically, including,\nbut not limited to, the type of device you use, the stable Application installation identifier generated\nby the Application, your IP address, your operating system, your app version, your user agent, request\nheaders needed to operate the backend, and information about the way you use the Application.\nThis information is used to provide the service, secure sessions, enforce rate limits, maintain\ncompatibility, and troubleshoot issues.\nThe Application and backend also send diagnostic information to a private GlitchTip instance, using the\nSentry-compatible error reporting protocol, when bugs or crashes occur. These reports may include\ntechnical details such as the app version, operating system version, device model, error message,\nstack trace, timestamp, recent actions in the Application, and, for backend errors, request information\nsuch as the HTTP method, URL, and request headers. Your master password and TOTP secrets are not\nintentionally sent in these reports."
+    },
+    "locationInfo": {
+      "title": "Does the Application collect precise real-time location information of the device ?",
+      "content": "This Application does not gather precise information about the location of your device.\nThe Application may request camera access only to scan TOTP QR codes. Camera images are processed on\nyour device for scanning and are not intentionally sent to the Service Provider.\nIf you enable biometric or local authentication, authentication is handled by your device operating system;\nthe Application does not receive or transmit your biometric data."
+    },
+    "thirdPartyAccess": {
+      "title": "Do third parties see and/or have access to information obtained by the Application ?",
+      "content": "Aggregated, anonymized data may be periodically transmitted to internal services to aid the\nService Provider in improving the Application and their service. Diagnostic information related to bugs\nor crashes may be transmitted to the Service Provider's private GlitchTip instance for error monitoring\nand troubleshooting. Data needed to operate the service may be processed by infrastructure providers,\nauthentication providers, RevenueCat, app stores, and optional logo search services when you use the\ncorresponding features. The Service Provider may share your information with third parties in the ways\nthat are described in this privacy statement."
+    },
+    "thirdPartyProviders": {
+      "title": "Third-Party Providers",
+      "content": "Please note that the Application utilizes third-party services that have their own\nPrivacy Policy about handling data. Below are the links to the Privacy Policy of the\nthird-party service providers used by the Application :",
+      "list": {
+        "googlePlayServices": "[Google Play Services](https://www.google.com/policies/privacy/)",
+        "cloudflare": "[Cloudflare](https://www.cloudflare.com/privacypolicy/)",
+        "revenueCat": "[RevenueCat](https://www.revenuecat.com/privacy/)",
+        "google": "[Google](https://policies.google.com/privacy)",
+        "apple": "[Apple](https://www.apple.com/legal/privacy/en-ww/)",
+        "github": "[GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement)",
+        "microsoft": "[Microsoft](https://www.microsoft.com/en-us/privacy/privacystatement)",
+        "logoDev": "[Logo.dev](https://www.logo.dev/legal/privacy)",
+        "brandfetch": "[Brandfetch](https://brandfetch.com/privacy)",
+        "upLead": "[UpLead](https://www.uplead.com/privacy/)",
+        "wikimedia": "[Wikimedia Foundation](https://foundation.wikimedia.org/wiki/Policy:Privacy_policy)",
+        "firebase": "[Firebase / Google](https://policies.google.com/privacy)"
+      }
+    },
+    "disclosure": {
+      "title": "Disclosure of Information",
+      "content": "The Service Provider may disclose User Provided and Automatically Collected Information :",
+      "list": {
+        "1": "as required by law, such as to comply with a subpoena, or similar legal process;",
+        "2": "when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;",
+        "3": "with their trusted services providers who work on their behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement."
+      }
+    },
+    "optOut": {
+      "title": "What are my opt-out rights?",
+      "content": "You can halt all collection of information by the Application easily by uninstalling the\nApplication. You may use the standard uninstall processes as may be available as part of your mobile device\nor via the mobile application marketplace or network."
+    },
+    "dataRetention": {
+      "title": "Data Retention Policy, Managing Your Information",
+      "content": "The Service Provider will retain User Provided data for as long as you use the\nApplication and for a reasonable time thereafter. Backend refresh sessions are normally retained until\nthey expire or are revoked. Deleted TOTP synchronization markers and processed RevenueCat webhook event\nrecords may be retained for up to 365 days before pruning. Inactive non-contributor accounts without\nactive sessions or stored TOTPs may be pruned.\nIf you delete your account from the Application, the Service Provider deletes the backend user record,\nbackend sessions, and synchronized TOTP data controlled by the Service Provider. Data held by third-party\nproviders, app stores, or RevenueCat remains subject to their own retention and account-management rules.\nThe Service Provider will retain Automatically Collected information for up to 24 months and thereafter\nmay store it in aggregate.\nIf you'd like the Service Provider to delete User Provided Data that you have provided via the Application,\nplease [contact them](/contact/) and they will respond in a reasonable time.\nPlease note that some or all of the User Provided Data may be required in order for the Application\nto function properly.\nYour master password is not transmitted to any remote server.\n**If you forget it, we cannot help you recover it.**\nPlease be aware that, although we endeavor to provide reasonable security for\ninformation we process and maintain, no security system can prevent all potential security breaches."
+    },
+    "children": {
+      "title": "Children",
+      "content": "The Service Provider does not use the Application to knowingly solicit data from or market\nto children under the age of 13. The Application does not address anyone under the age of 13.\nThe Service Provider does not knowingly collect personally identifiable information from children under\n13 years of age."
+    },
+    "security": {
+      "title": "Security",
+      "content": "The Service Provider is concerned about safeguarding the confidentiality of your information.\nThe Service Provider provides physical, electronic, and procedural safeguards to protect information we\nprocess and maintain. If you choose to synchronize your data between your devices, the backend stores\nyour TOTP records in encrypted form. The TOTP secret, label, issuer, and image URL are encrypted using\nan [AES-GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm with an\n[Argon2](https://en.wikipedia.org/wiki/Argon2) derived key based on your master password and a random salt.\nSome synchronization metadata, such as the TOTP UUID, algorithm, digit count, validity period, update\ntime, and deletion markers, may be stored without being encrypted by the master password so synchronization\ncan work correctly."
+    },
+    "changes": {
+      "title": "Changes",
+      "content": "This Privacy Policy may be updated from time to time for any reason.\nThe Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new\nPrivacy Policy.",
+      "effectiveDate": "This privacy policy is effective as of April 1, 2024."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have any questions regarding privacy while using the Application, or\nhave questions about the practices, please [contact](/contact/) the Service Provider."
+    },
+    "credit": "Thanks to [nisrulz](https://app-privacy-policy-generator.firebaseapp.com/) for this privacy policy."
+  },
+  "termsOfService": {
+    "title": {
+      "lastUpdated": "Última atualização em 22 de abril de 2026",
+      "content": "Termos e Condições."
+    },
+    "intro": "These terms and conditions applies to the Open Authenticator app (hereby referred to as \"Application\")\nfor mobile devices that was created by Skyost (hereby referred to as \"Service Provider\") as a subscription supported service.",
+    "agreement": "Upon downloading or utilizing the Application, you are automatically agreeing to the following terms\nand to the [Privacy policy](/privacy-policy).\nIt is strongly advised that you thoroughly read and understand these terms prior to using the Application.\nUnauthorized copying, modification of the Application, any part of the Application, or our trademarks\nis strictly prohibited.\nAny attempts to create derivative versions or \"copycats\" are not permitted.\nAll trademarks, copyrights, database rights, and other intellectual property rights related to the\nApplication remain the property of the Service Provider.",
+    "modification": "The Service Provider is dedicated to ensuring that the Application is as beneficial and efficient as\npossible. As such, they reserve the right to modify the Application or charge for their services at\nany time and for any reason. The Service Provider assures you that any charges for the Application or\nits services will be clearly communicated to you.",
+    "dataProcessing": "The Application stores and processes personal data that you have provided to the Service Provider in\norder to provide the Service, including account, authentication, synchronization, diagnostic, and\nsubscription-related data as described in the Privacy Policy. It is your responsibility to maintain the\nsecurity of your device and access to the Application. The Service Provider strongly advises against\njailbreaking or rooting your phone, which involves removing software restrictions and limitations imposed\nby the official operating system of your device. Such actions could expose your phone to malware, viruses,\nmalicious programs, compromise your phone's security features, and may result in the Application not\nfunctioning correctly or at all.",
+    "thirdPartyTerms": "Please note that the Application utilizes third-party services that have their own Terms and Conditions.\nBelow are the links to the Terms and Conditions of the third-party service providers used by the\nApplication :",
+    "thirdPartyTermsList": {
+      "googlePlayServices": "[Google Play Services](https://play.google.com/intl/en_us/about/play-terms/)",
+      "appleMediaServices": "[Apple Media Services](https://www.apple.com/legal/internet-services/itunes/us/terms.html)",
+      "cloudflare": "[Cloudflare](https://www.cloudflare.com/website-terms/)",
+      "revenueCat": "[RevenueCat](https://www.revenuecat.com/terms/)",
+      "google": "[Google](https://policies.google.com/terms)",
+      "apple": "[Apple](https://www.apple.com/legal/internet-services/itunes/us/terms.html)",
+      "github": "[GitHub](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service)",
+      "microsoft": "[Microsoft](https://www.microsoft.com/en-US/servicesagreement)",
+      "logoDev": "[Logo.dev](https://www.logo.dev/legal/terms)",
+      "brandfetch": "[Brandfetch](https://brandfetch.com/terms)",
+      "upLead": "[UpLead](https://www.uplead.com/terms-and-conditions/)",
+      "wikimedia": "[Wikimedia Foundation](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use)",
+      "firebase": "[Firebase / Google](https://policies.google.com/terms)"
+    },
+    "responsibility": "Please be aware that the Service Provider does not assume responsibility for certain aspects.\nSome functions of the Application require an active internet connection, which can be Wi-Fi or provided\nby your mobile network provider. The Service Provider cannot be held responsible if the Application does\nnot function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance.",
+    "charges": "If you are using the application outside of a Wi-Fi area, please be aware that your mobile network\nprovider's agreement terms still apply. Consequently, you may incur charges from your mobile provider\nfor data usage during the connection to the application, or other third-party charges.\nBy using the application, you accept responsibility for any such charges, including roaming data\ncharges if you use the application outside of your home territory (i.e., region or country) without\ndisabling data roaming.\nThe Contributor Plan is handled through the applicable app store, RevenueCat, or RevenueCat Web Billing,\ndepending on your platform. Subscriptions may renew automatically and must be managed or cancelled\nthrough the platform or billing provider that processed the purchase. Refunds, trials, renewals, and\ncancellations are subject to the rules of the applicable platform and to mandatory consumer protection laws.\nIf you are not the bill payer for the device on which you are using the application, they assume\nthat you have obtained permission from the bill payer.",
+    "battery": "Similarly, the Service Provider cannot always assume responsibility for your usage of the application.\nFor instance, it is your responsibility to ensure that your device remains charged.\nIf your device runs out of battery and you are unable to access the Service, the Service Provider\ncannot be held responsible.",
+    "termination": "The Service Provider may wish to update the application at some point.\nThe application is currently available as per the requirements for the operating system\n(and for any additional systems they decide to extend the availability of the application to) may change,\nand you will need to download the updates if you want to continue using the application.\nThe Service Provider does not guarantee that it will always update the application so that it is relevant\nto you and/or compatible with the particular operating system version installed on your device.\nHowever, you agree to always accept updates to the application when offered to you.\nThe Service Provider may also wish to cease providing the application and may terminate its use at any\ntime without providing termination notice to you. Unless they inform you otherwise, upon any termination,\n(a) the rights and licenses granted to you in these terms will end; (b) you must cease using the application,\nand (if necessary) delete it from your device.",
+    "legalRiskResponsibility": {
+      "title": "Legal risk and responsibility",
+      "noWarranty": {
+        "title": "No warranty",
+        "content": "All Content (including but not limited to your TOTPs) is made available AS IS and the Service Provider\ndoes not offer any warranty of any kind, or represent that the Content will be accurate, complete,\nor error-free."
+      },
+      "synchronizationSecurity": {
+        "title": "Synchronization and security",
+        "content": "If you choose to synchronize your Data between your devices, you acknowledge that encrypted TOTP data,\nsynchronization metadata, account identifiers, authentication-provider identifiers, sessions, and\nsubscription status may be stored on the Service Provider's backend and infrastructure providers.\nLegacy Firebase data may be processed if you use the migration feature from an older version of the\nApplication. Please be aware that, although we endeavor to provide reasonable security for information we\nprocess and maintain, no security system can prevent all potential security breaches.\nTherefore, we are not liable for any data loss, any leak, or any damage resulting from the use of\nthe application."
+      },
+      "releaseIndemnity": {
+        "title": "Release and indemnity",
+        "content": "To the extent permitted by applicable law, you agree to release and waive any and all\nclaims and/or liability against the Service Provider arising from connection with your use of the\nApplication or any subscription to the Application. You also agree to defend, indemnify and hold harmless\nthe Service Provider, officers, directors, employees, partners, contributors, or licensors from and\nagainst any and all claims, damages, obligations, losses, liabilities, (including but not limited to\nattorney's fees) arising from : (i) your use of and access to the Application; (ii) your violation of any\nterm of these terms of use; and (iii) your violation of any third party right, including without limitation\nany copyright, property, or privacy right."
+      },
+      "limitationOfLiability": {
+        "title": "Limitation of Liability",
+        "content": "As stated before, under no circonstances, including negligence, shall the Service Provider, officers, directors,\nemployees, partners, contributors, or licensors be liable for any direct, indirect, incidental, special,\npunitive or consequential damages that may result from the access of, use or inability to use the Application content,\nincluding without limitation, use of or reliance on information, interruptions, errors, defects, mistakes,\nomissions, deletions of files, delays in operations or transmission, non-delivery of information, disclosure of\ncommunications, or any other failure of performance."
+      }
+    },
+    "changes": {
+      "title": "Changes to These Terms and Conditions",
+      "content": "The Service Provider may periodically update their Terms and Conditions.\nTherefore, you are advised to review this page regularly for any changes.\nThe Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.",
+      "effectiveDate": "These terms and conditions are effective as of 2024-04-01."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have any questions or suggestions about the Terms and Conditions,\nplease do not hesitate to [contact](/contact/) the Service Provider."
+    },
+    "credit": "Thanks to [nisrulz](https://app-privacy-policy-generator.firebaseapp.com/) for these terms of service."
+  },
+  "contact": {
+    "title": {
+      "before": "Contato",
+      "content": "Vamos *conversar.*"
+    },
+    "pageTitle": "Contato",
+    "description": "Para qualquer assunto relacionado ao desenvolvimento do Open Authenticator — bugs, sugestões, contribuições — abra diretamente uma [issue no GitHub](https://github.com/openauthenticator-app/openauthenticator). Para qualquer outra solicitação (exclusão de conta, pergunta geral etc.), use o formulário abaixo.",
+    "form": {
+      "name": {
+        "label": "Seu nome",
+        "placeholder": "Digite seu nome aqui"
+      },
+      "email": {
+        "label": "Seu e-mail",
+        "placeholder": "Digite seu e-mail aqui"
+      },
+      "subject": {
+        "label": "Assunto da mensagem",
+        "options": {
+          "accountDeletion": "Exclusão de conta",
+          "moreInfoNeeded": "Mais informações",
+          "commercial": "Comercial",
+          "other": "Outro"
+        }
+      },
+      "message": {
+        "label": "Conteúdo da mensagem",
+        "placeholder": "Digite sua mensagem aqui"
+      },
+      "success": "Sua solicitação foi enviada com sucesso.",
+      "error": "Ocorreu um erro ao enviar sua solicitação.",
+      "send": "Enviar"
+    }
+  },
+  "translate": {
+    "pageTitle": "Localização",
+    "title": {
+      "before": "Contribuir",
+      "content": "Traduza o *Open Authenticator.*"
+    },
+    "goBack": "Voltar para os idiomas",
+    "notYourLanguage": "Não é o seu idioma?",
+    "description": "Você fala outro idioma? Ajude a tornar o app acessível para todos. Escolha um idioma abaixo para começar. Se o seu não estiver disponível, [envie uma mensagem](/contact/) e nós o adicionaremos.",
+    "languageDescription": "A tradução é organizada em vários arquivos. Para traduzir um deles, primeiro você precisa expandi-lo.\nDepois disso, verá os textos originais na coluna da esquerda e a tradução existente à direita.\nQuando terminar de traduzir um arquivo, você poderá enviá-lo clicando no botão verde de envio.\n\nÉ possível salvar seu progresso a qualquer momento usando o botão *Salvar*.\nO botão *Carregar* permitirá continuar a tradução depois.",
+    "stats": {
+      "1": "Locales disponíveis",
+      "2": "Arquivos",
+      "3": "Traduções concluídas",
+      "4": "Em andamento"
+    },
+    "accordion": {
+      "load": "Carregar",
+      "save": "Salvar",
+      "submit": "Enviar"
+    },
+    "table": {
+      "originalText": "Texto original",
+      "translation": "Tradução"
+    },
+    "modal": {
+      "modalTitle": "Enviar sua tradução",
+      "title": "Obrigado por *contribuir* com o Open Authenticator!",
+      "subtitle": "Siga as etapas abaixo para enviar sua tradução.",
+      "grabCode": {
+        "title": "Copiar o código",
+        "copyCode": "Primeiro, você precisa copiar o código abaixo.",
+        "copyToClipboard": "Copiar para a área de transferência",
+        "translationData": "Isto contém os dados de tradução."
+      },
+      "openGithub": {
+        "title": "Abrir Github",
+        "click": "Clique no link a seguir para editar o arquivo atual no Github.",
+        "note": "**Nota.** Você precisa de uma conta no Github.\nPor favor, [crie uma](https://github.com/) antes de continuar."
+      },
+      "fork": {
+        "title": "Criar fork do repositório",
+        "fork": "Clique em **Fork this repository**.",
+        "pasteTheCode": "Depois disso, cole o código copiado durante a *Etapa **#1***.",
+        "commit": "Em seguida, clique em **Commit changes...** e em **Propose changes**."
+      },
+      "pullRequest": {
+        "title": "Criar um pull request",
+        "beforeCreate": "Clique em **Create pull request** e preencha o formulário.",
+        "form": {
+          "title": "Você pode colocar algo como \"`feat: Translated {file} into {language}.`\".",
+          "message": "Deixe uma mensagem detalhando o que você traduziu e o que ainda precisa ser traduzido."
+        },
+        "create": "Depois, clique em **Create pull request**."
+      },
+      "done": {
+        "title": "Pronto!",
+        "message": "Sua contribuição será revisada e provavelmente aprovada se atender aos padrões de qualidade do Open Authenticator 😎"
+      },
+      "close": "Fechar"
+    },
+    "unsavedChanges": "Parece que você tem alterações não salvas. Se sair desta página, tudo será perdido. Deseja continuar?",
+    "error": "Erro ao solicitar os dados de tradução."
+  },
+  "error": {
+    "title": {
+      "before": "Ocorreu um erro",
+      "content": "Erro",
+      "notFound": "Página não encontrada"
+    },
+    "description": "Você pode continuar navegando voltando para a página anterior ou indo para a [página inicial](/).",
+    "notFound": "Se algo deveria estar aqui, [envie uma mensagem](/contact)."
+  }
+}
