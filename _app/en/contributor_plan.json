@@ -1,0 +1,38 @@
+{
+  "subscribeSuccess": {
+    "immediate": "You have successfully subscribed to the Contributor Plan. Thanks a lot !",
+    "delayed": "The purchase was successful ! You may have to wait a few minutes or restart the app."
+  },
+  "fallbackPaywall": {
+    "title(rich)": "${title(Contributor)} Plan",
+    "features": [
+      "Synchronize as much TOTPs as you want.",
+      "Contribute to Open Source.",
+      "Help us to improve the app."
+    ],
+    "packageType": {
+      "choose": "Choose your billing plan :",
+      "empty": "There isn't any option for you to subscribe to the Contributor Plan.",
+      "name(map)": {
+        "annual": "Annual",
+        "monthly": "Monthly"
+      },
+      "interval(map)": {
+        "annual": "Year",
+        "monthly": "Month"
+      },
+      "price(rich)": "$price / $interval",
+      "subtitle(map)": {
+        "annual": "Get billed every year.",
+        "monthly": "Get billed every month."
+      }
+    },
+    "button": {
+      "subscribed": "Subscribed !",
+      "privacyPolicy": "Privacy policy",
+      "termsOfService": "Terms of service",
+      "restorePurchases": "Restore purchases"
+    },
+    "restorePurchasesSuccess": "Your purchases have been restored with success !"
+  }
+}
