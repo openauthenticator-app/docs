@@ -1,0 +1,38 @@
+{
+  "subscribeSuccess": {
+    "immediate": "Sie haben den Mitwirkender-Plan erfolgreich abonniert. Vielen Dank !",
+    "delayed": "Der Kauf war erfolgreich ! Möglicherweise müssen Sie einige Minuten warten oder die App neu starten."
+  },
+  "fallbackPaywall": {
+    "title(rich)": "${title(Mitwirkender)}-Plan",
+    "features": [
+      "Synchronisieren Sie so viele TOTPs, wie Sie möchten.",
+      "Tragen Sie zu Open Source bei.",
+      "Helfen Sie uns, die App zu verbessern."
+    ],
+    "packageType": {
+      "choose": "Wählen Sie Ihren Abrechnungsplan:",
+      "empty": "Es gibt keine Option, den Mitwirkender-Plan zu abonnieren.",
+      "name(map)": {
+        "annual": "Jährlich",
+        "monthly": "Monatlich"
+      },
+      "interval(map)": {
+        "annual": "Jahr",
+        "monthly": "Monat"
+      },
+      "price(rich)": "$price / $interval",
+      "subtitle(map)": {
+        "annual": "Abrechnung erfolgt jährlich.",
+        "monthly": "Abrechnung erfolgt monatlich."
+      }
+    },
+    "button": {
+      "subscribed": "Abonnement erfolgreich!",
+      "privacyPolicy": "Datenschutzbestimmungen",
+      "termsOfService": "Allgemeine Geschäftsbedingungen",
+      "restorePurchases": "Käufe wiederherstellen"
+    },
+    "restorePurchasesSuccess": "Ihre Käufe wurden erfolgreich wiederhergestellt!"
+  }
+}
