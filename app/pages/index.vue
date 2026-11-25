@@ -116,7 +116,7 @@ const features = computed(() => {
                 <img
                   class="mw-100"
                   src="/images/screenshots/home.png"
-                  alt="Screenshot"
+                  :alt="t('index.main.screenshotAlt')"
                 >
               </mobile-phone>
             </b-col>

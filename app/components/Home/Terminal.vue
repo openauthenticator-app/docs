@@ -7,15 +7,15 @@
     </div>
     <div class="terminal-body">
       <div><span class="t-dim">$</span> <span class="t-green">git clone</span> <span class="t-white">github.com/Skyost/OpenAuthenticator</span></div>
-      <div><span class="t-dim">Cloning into 'OpenAuthenticator'...</span></div>
+      <div><span class="t-dim">{{ $t('index.openSource.terminal.cloning') }}</span></div>
       <div>&nbsp;</div>
       <div><span class="t-dim">$</span> <span class="t-green">flutter pub get</span></div>
-      <div><span class="t-dim">Running "flutter pub get" in OpenAuthenticator...</span></div>
-      <div><span class="t-green">✓</span> <span class="t-dim">Got dependencies.</span></div>
+      <div><span class="t-dim">{{ $t('index.openSource.terminal.gettingPackages') }}</span></div>
+      <div><span class="t-green">✓</span> <span class="t-dim">{{ $t('index.openSource.terminal.packagesReady') }}</span></div>
       <div>&nbsp;</div>
       <div><span class="t-dim">$</span> <span class="t-green">flutter run</span></div>
-      <div><span class="t-green">✓</span> <span class="t-dim">Build succeeded in 12.4s</span></div>
-      <div><span class="t-green">✓</span> <span class="t-white">Open Authenticator</span> <span class="t-dim">running on your device</span></div>
+      <div><span class="t-green">✓</span> <span class="t-dim">{{ $t('index.openSource.terminal.buildSucceeded') }}</span></div>
+      <div><span class="t-green">✓</span> <span class="t-white">Open Authenticator</span> <span class="t-dim">{{ $t('index.openSource.terminal.running') }}</span></div>
       <div>&nbsp;</div>
       <div><span class="t-dim">$</span> <span class="cursor" /></div>
     </div>

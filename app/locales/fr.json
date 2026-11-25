@@ -5,7 +5,8 @@
     "privacyPolicy": "Politique de confidentialité",
     "termsOfService": "Conditions d'utilisation",
     "contact": "Contact",
-    "downloadButton": "Télécharger"
+    "downloadButton": "Télécharger",
+    "toggle": "Afficher ou masquer le menu de navigation"
   },
   "footer": {
     "app": {
@@ -21,7 +22,8 @@
       "termsOfService": "Conditions d'utilisation",
       "contact": "Contact"
     },
-    "language": "Langage"
+    "language": "Langage",
+    "tagline": "Un développeur de plus"
   },
   "index": {
     "main": {
@@ -42,7 +44,8 @@
       "latestVersion": {
         "text": "Dernière version :",
         "changelog": "Changelog"
-      }
+      },
+      "screenshotAlt": "Écran principal d’Open Authenticator"
     },
     "stats": {
       "1": "Gratuit & open-source",
@@ -102,6 +105,13 @@
         "github": "Github",
         "translate": "Traduire",
         "donate": "Faire un don"
+      },
+      "terminal": {
+        "cloning": "Clonage dans « OpenAuthenticator »...",
+        "gettingPackages": "Exécution de « flutter pub get » dans OpenAuthenticator...",
+        "packagesReady": "Dépendances téléchargées.",
+        "buildSucceeded": "Compilation réussie en 12,4 s",
+        "running": "est en cours d’exécution sur votre appareil"
       }
     },
     "getStarted": {
@@ -396,6 +406,7 @@
       "close": "Fermer"
     },
     "unsavedChanges": "Il semble que vous avez des changements non enregistrés. Ils seront perdus si vous quittez cette page. Voulez-vous continuer ?",
+    "fileLoadError": "Une erreur est survenue lors du chargement du fichier sélectionné.",
     "error": "Une erreur est survenue durant l'obtention des données de traduction."
   },
   "error": {

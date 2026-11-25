@@ -117,7 +117,7 @@ const load = (index: number) => {
           }
           catch (ex) {
             console.error(ex)
-            alert('An error occurred while loading the given file.')
+            alert(t('translate.fileLoadError'))
           }
         }
       }

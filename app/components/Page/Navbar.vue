@@ -58,7 +58,10 @@ const items = computed(() => [
     :variant="null"
     sticky="top"
   >
-    <b-navbar-toggle target="nav-collapse" />
+    <b-navbar-toggle
+      target="nav-collapse"
+      :label="$t('navbar.toggle')"
+    />
     <b-collapse
       id="nav-collapse"
       class="position-relative"

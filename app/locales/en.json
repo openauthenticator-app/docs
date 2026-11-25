@@ -5,7 +5,8 @@
     "privacyPolicy": "Privacy policy",
     "termsOfService": "Terms of services",
     "contact": "Contact",
-    "downloadButton": "Download"
+    "downloadButton": "Download",
+    "toggle": "Toggle navigation"
   },
   "footer": {
     "app": {
@@ -21,7 +22,8 @@
       "termsOfService": "Terms of services",
       "contact": "Contact"
     },
-    "language": "Language"
+    "language": "Language",
+    "tagline": "Yet another developer"
   },
   "index": {
     "main": {
@@ -42,7 +44,8 @@
       "latestVersion": {
         "text": "Latest version :",
         "changelog": "Changelog"
-      }
+      },
+      "screenshotAlt": "Screenshot"
     },
     "stats": {
       "1": "Free & open-source",
@@ -102,6 +105,13 @@
         "github": "Github",
         "translate": "Translate",
         "donate": "Donate"
+      },
+      "terminal": {
+        "cloning": "Cloning into 'OpenAuthenticator'...",
+        "gettingPackages": "Running \"flutter pub get\" in OpenAuthenticator...",
+        "packagesReady": "Got dependencies.",
+        "buildSucceeded": "Build succeeded in 12.4s",
+        "running": "running on your device"
       }
     },
     "getStarted": {
@@ -395,6 +405,7 @@
       "close": "Close"
     },
     "unsavedChanges": "It looks like you have unsaved changes. If you leave this page, everything will be lost. Do you want to continue ?",
+    "fileLoadError": "An error occurred while loading the selected file.",
     "error": "Error while requesting translation data."
   },
   "error": {

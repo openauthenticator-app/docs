@@ -1,8 +1,8 @@
 import * as fs from 'fs'
-import * as dot from 'dot-object'
+import dot from 'dot-object'
 import { addServerHandler, createResolver, defineNuxtModule, useLogger } from '@nuxt/kit'
 import * as yaml from 'yaml'
-import { storageKey } from './common'
+import { storageKey } from './common.ts'
 import path from 'path'
 import AdmZip from 'adm-zip'
 import { Octokit } from '@octokit/core'
@@ -113,7 +113,8 @@ export default defineNuxtModule<ModuleOptions>({
       fs.mkdirSync(parentPath, { recursive: true })
     }
     for (const entry of ['pubspec.yaml', 'lib/i18n/']) {
-      zip.extractEntryTo(`${zipRootDir}${entry}`, parentPath)
+      // A previous build may have stopped after extracting this archive.
+      zip.extractEntryTo(`${zipRootDir}${entry}`, parentPath, true, true)
     }
     logger.success(`Done.`)
     logger.info('Extracting application version...')

@@ -44,7 +44,8 @@ Open Authenticator Docs is the public-facing website for the Open Authenticator 
 ## Requirements
 
 Open Authenticator Docs is powered by [Nuxt](https://nuxt.com), therefore, you will need to have
-[Node.js](https://nodejs.org) installed.
+[Node.js](https://nodejs.org) 22.22.3+ (22.x), 24.15.0+ (24.x), or 26+, and
+[pnpm](https://pnpm.io) installed.
 
 > [!NOTE]
 > Open Authenticator Docs is designed to be statically generated and deployed to GitHub Pages.
@@ -57,7 +58,7 @@ To clone the repository and install dependencies, run in a shell :
 ```sh
 git clone https://github.com/openauthenticator-app/docs.git
 cd docs
-npm install
+pnpm install
 ```
 
 ## Local development
@@ -65,7 +66,7 @@ npm install
 Start the development server :
 
 ```sh
-npm run dev
+pnpm dev
 ```
 
 The site will then be available at `http://localhost:3000`.
@@ -75,19 +76,19 @@ The site will then be available at `http://localhost:3000`.
 Create a production build :
 
 ```sh
-npm run build
+pnpm build
 ```
 
 Generate the static version of the site :
 
 ```sh
-npm run generate
+pnpm generate
 ```
 
 Preview the production build locally :
 
 ```sh
-npm run preview
+pnpm preview
 ```
 
 ## Contributing

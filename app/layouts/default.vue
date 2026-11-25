@@ -2,6 +2,15 @@
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()
+const openGraphLocales: Record<string, string> = {
+  de: 'de_DE',
+  en: 'en_GB',
+  es: 'es_ES',
+  fr: 'fr_FR',
+  it: 'it_IT',
+  pt: 'pt_PT',
+}
+useSeoMeta({ ogLocale: () => openGraphLocales[locale.value] })
 </script>
 
 <template>

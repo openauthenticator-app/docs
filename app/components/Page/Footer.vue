@@ -29,7 +29,7 @@ const year = (new Date()).getFullYear()
         </ul>
         <div class="d-flex align-items-center">
           <p class="mb-0">
-            &copy; {{ year }} <a href="https://skyost.eu">Skyost</a> · Yet another developer
+            &copy; {{ year }} <a href="https://skyost.eu">Skyost</a> · {{ $t('footer.tagline') }}
           </p>
         </div>
       </div>

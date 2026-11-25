@@ -5,7 +5,8 @@
     "privacyPolicy": "Datenschutzerklärung",
     "termsOfService": "Nutzungsbedingungen",
     "contact": "Kontakt",
-    "downloadButton": "Herunterladen"
+    "downloadButton": "Herunterladen",
+    "toggle": "Navigation ein- oder ausblenden"
   },
   "footer": {
     "app": {
@@ -21,7 +22,8 @@
       "termsOfService": "Nutzungsbedingungen",
       "contact": "Kontakt"
     },
-    "language": "Sprache"
+    "language": "Sprache",
+    "tagline": "Noch ein Entwickler"
   },
   "index": {
     "main": {
@@ -42,7 +44,8 @@
       "latestVersion": {
         "text": "Neueste Version:",
         "changelog": "Changelog"
-      }
+      },
+      "screenshotAlt": "Hauptansicht von Open Authenticator"
     },
     "stats": {
       "1": "Kostenlos & Open Source",
@@ -102,6 +105,13 @@
         "github": "Github",
         "translate": "Übersetzen",
         "donate": "Spenden"
+      },
+      "terminal": {
+        "cloning": "Klone nach „OpenAuthenticator“...",
+        "gettingPackages": "Führe „flutter pub get“ in OpenAuthenticator aus...",
+        "packagesReady": "Abhängigkeiten geladen.",
+        "buildSucceeded": "Build in 12,4 s abgeschlossen",
+        "running": "läuft auf Ihrem Gerät"
       }
     },
     "getStarted": {
@@ -396,6 +406,7 @@
       "close": "Schließen"
     },
     "unsavedChanges": "Es sieht so aus, als hätten Sie ungespeicherte Änderungen. Wenn Sie diese Seite verlassen, geht alles verloren. Möchten Sie fortfahren?",
+    "fileLoadError": "Beim Laden der ausgewählten Datei ist ein Fehler aufgetreten.",
     "error": "Fehler beim Abrufen der Übersetzungsdaten."
   },
   "error": {

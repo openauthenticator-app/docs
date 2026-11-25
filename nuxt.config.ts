@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@bootstrap-vue-next/nuxt',
-    '@nuxtjs/google-fonts',
+    '@nuxt/fonts',
   ],
   devtools: { enabled: true },
 
@@ -90,15 +90,12 @@ export default defineNuxtConfig({
     },
   },
 
-  googleFonts: {
-    families: {
-      'DM+Serif+Display': {
-        bold: true,
-        ital: true,
-      },
-      'DM+Mono': [400, 500],
-      'Outfit': [300, 400, 500, 600],
-    },
+  fonts: {
+    families: [
+      { name: 'DM Serif Display', provider: 'google', weights: [400], styles: ['normal', 'italic'] },
+      { name: 'DM Mono', provider: 'google', weights: [400, 500], styles: ['normal'] },
+      { name: 'Outfit', provider: 'google', weights: [300, 400, 500, 600], styles: ['normal'], global: true },
+    ],
   },
 
   icon: {

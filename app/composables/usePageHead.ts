@@ -51,7 +51,6 @@ export const usePageHead = (pageHead?: PageHead) => {
     ogSiteName: siteMeta.name,
     ogUrl: currentAddress,
     ogImage: head.openGraphImage,
-    ogLocale: 'fr',
     twitterCard: head.twitterCard,
     twitterTitle: head.title,
     twitterDescription: head.description,

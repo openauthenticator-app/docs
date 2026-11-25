@@ -12,29 +12,31 @@ on:
   repository_dispatch:
     types: [ app-updated ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-latest ]
-        node: [ latest ]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v3
-      - name: Setup Node.js ${{ matrix.node }} 🏗
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
+      - name: Setup pnpm 📦
+        uses: pnpm/action-setup@v4
+      - name: Setup Node.js 🏗
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
-          cache: 'npm'
-          cache-dependency-path: ./package-lock.json
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
       - name: Install dependencies 👨🏻‍💻
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Generate ⚙️
-        run: npm run generate
+        run: pnpm generate
       - name: Create .nojekyll file 🧪
         run: touch ./dist/.nojekyll
       - name: Deploy 🚀
+        if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
