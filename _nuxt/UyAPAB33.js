@@ -1,0 +1,2 @@
+//# allFunctionsCalledOnLoad
+import{Et as e,Nt as t,Wt as n,dt as r,gn as i,h as a,in as o,jt as s,qt as c}from"#entry";import{h as l,n as u,t as d}from"./BLrj1tsL.js";var f=t({__name:`default`,setup(t){let{locale:f}=a(),p={de:`de_DE`,en:`en_GB`,es:`es_ES`,fr:`fr_FR`,it:`it_IT`,pt:`pt_PT`};return r({ogLocale:()=>p[f.value]}),(t,r)=>(n(),e(l,{lang:i(f),dir:`ltr`,"data-bs-theme":`dark`},{default:o(()=>[s(u),c(t.$slots,`default`),s(d)]),_:3},8,[`lang`]))}});export{f as default};

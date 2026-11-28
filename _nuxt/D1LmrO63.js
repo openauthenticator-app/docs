@@ -1,0 +1,2 @@
+//# allFunctionsCalledOnLoad
+import{Nt as e,Ot as t,Wt as n,_n as r,m as i,yn as a}from"#entry";var o=Object.assign(i(e({__name:`BlurredStain`,props:{center:{type:Boolean,default:!0},size:{default:200}},setup(e){return(i,o)=>(n(),t(`div`,{class:r([`blurred-stain`,{center:e.center}]),style:a(`--size: ${e.size}px;`)},null,6))}}),[[`__scopeId`,`data-v-daa21bf0`]]),{__name:`BlurredStain`});export{o as t};
